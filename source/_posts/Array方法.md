@@ -1,6 +1,6 @@
 ---
 title: Array方法
-date: 2018-01-12 20:06:19
+date: 2017-01-12 20:06:19
 tags: [Array]
 ---
 # join() #

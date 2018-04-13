@@ -1,6 +1,6 @@
 ---
 title: Ajax
-date: 2018-01-20 17:30:46
+date: 2017-01-20 17:30:46
 tags: [Ajax]
 ---
 ajax 的全称是Asynchronous JavaScript and XML，其中，Asynchronous 是异步的意思，它有别于传统web开发中采用的同步的方式。

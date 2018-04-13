@@ -1,6 +1,6 @@
 ---
 title: CommonJS规范
-date: 2018-01-28 16:36:31
+date: 2017-01-28 16:36:31
 tags: [CommonJS,规范]
 ---
 # 定义模块 #

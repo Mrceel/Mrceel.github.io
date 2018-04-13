@@ -1,10 +1,10 @@
 ---
 title: 数组去重
-date: 2017-03-15 21:58:49
+date: 2018-02-13 21:58:49
 tags: [Array]
 ---
 **1.**思想:遍历元素组,建立新数组。利用indexOf判断新数组中是否存在原数组中的第i项,不存在便添加进去。<small>ps:这里可以封装函数</small>
-```
+```javascript
 var arr = [12, 5, 8, 12, 6, 4, 8, 5, 3],
     arr2 = [];
     for (let i = 0, j = arr.length; i < j; i++) {
@@ -16,7 +16,7 @@ var arr = [12, 5, 8, 12, 6, 4, 8, 5, 3],
 ```
 <p></p>
 **2.**思想:利用indexOf判断数组中第i项的索引值是否等于其索引.(细细想想indexOf的用法及返回值)
-```
+```javascript
 var arr = [12, 5, 8, 12, 6, 4, 8, 5, 3];
 Array.prototype.removal=function(){
     let arr = [];
@@ -32,7 +32,7 @@ console.log(arr2) // [12,5,8,6,4,3]
 ```
 <p></p>
 **3.**思想:利用对象的属性不能相同的特点进行去重
-```
+```javascript
 var arr = [12, 5, 8, 12, 6, 4, 8, 5, 3];
     Array.prototype.removal=function(){
         let obj = {},
@@ -49,7 +49,7 @@ var arr = [12, 5, 8, 12, 6, 4, 8, 5, 3];
 ```
 <p></p>
 **4.**思想:数组递归去重
-```
+```javascript
 var arr = [12, 5, 8, 12, 6, 4, 8, 5, 3];
 Array.prototype.removal = function (){
     var arr1 = this,
@@ -72,7 +72,7 @@ console.log(arr.removal()) // [12,5,8,6,4,3]
 ```
 <p></p>
 **5.**思想:利用indexOf以及forEach
-```
+```javascript
 var arr = [12, 5, 8, 12, 6, 4, 8, 5, 3];
 Array.prototype.removal = function (){
     var arr = this,
@@ -92,7 +92,7 @@ console.log(arr.removal()) // [12,5,8,6,4,3]
 **6.**思想:利用ES6的set
 Set数据结构，它类似于数组，其成员的值都是唯一的。
 利用Array.from将Set结构转换成数组
-```
+```javascript
 function dedupe(array){
  return Array.from(new Set(array));
 }
@@ -100,7 +100,7 @@ dedupe([1,1,2,3]) //[1,2,3]
 ```
 <p></p>
 Array.from() 使用方法
-```
+```javascript
  Array.from(arrayLike, mapFn, thisArg)
  ```
 **参数**

@@ -1,6 +1,7 @@
 ---
 title: About me
 date: 2018-03-12 17:47:44
+comments: false
 ---
 <div align="center">
     **一个前端小菜鸟**

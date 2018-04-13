@@ -1,6 +1,6 @@
 ---
 title: ES6 Modules
-date: 2017-03-30 18:45:12
+date: 2018-02-11 18:45:12
 tags: [ES6]
 ---
 

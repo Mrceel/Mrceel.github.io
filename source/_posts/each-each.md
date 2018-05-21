@@ -5,7 +5,7 @@ tags: [each,JQuery]
 ---
 
 # $().each()
-
+<!-- more -->
 ```javascript
 $('input[type = "text"]').each((idx,ite)=>{
 	console.log(idx,ite)

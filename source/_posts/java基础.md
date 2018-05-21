@@ -6,11 +6,12 @@ tags: [java]
 <p style="font-size: 12px">本文采用对比式学习</p>
 
 # Hello World
-
+<!-- more -->
 javascript
 ```javascript
 console.log('hello world')
 ```
+
 创建文件 HelloWorld.java(文件名需与类名一致), 代码如下：
 java
 ```

@@ -5,7 +5,7 @@ tags: [JQuery,attr,prop]
 ---
 
 # jquery中attr和prop的区别
-
+<!-- more -->
 在高版本的jquery引入prop方法后，什么时候该用prop？什么时候用attr？它们两个之间有什么区别？这些问题就出现了。
 
 对于HTML元素本身就带有的固有属性，在处理时，使用prop方法。

@@ -4,7 +4,7 @@ date: 2017-01-30 19:23:23
 tags: [ES6,String]
 ---
 # includes #
-
+<!-- more -->
 includes是判断是否包含的,直接返回布尔值
 ```
 let str='google';

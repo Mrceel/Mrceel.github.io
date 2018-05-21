@@ -31,7 +31,7 @@ archive_dir: archives  # 归档文件夹
 category_dir: categories  #分类文件夹分类文件夹分类文件夹分类文件夹
 code_dir: downloads/code  #Include code 文件夹
 i18n_dir: :lang           #国际化（i18n）文件夹
-skip_render:              #跳过指定文件的渲染，您可使用 glob 表达式来匹配路径。
+skip_render: – static/**          #跳过指定文件的渲染，您可使用 glob 表达式来匹配路径。
 
 # Writing 文章
 new_post_name: :title.md # File name of new posts  新文章的文件名称
@@ -79,6 +79,12 @@ pagination_dir: page #分页目录                        page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

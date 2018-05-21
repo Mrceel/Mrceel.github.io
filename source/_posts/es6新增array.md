@@ -4,6 +4,7 @@ date: 2017-02-10 21:16:21
 tags: [ ES6 , Array ]
 ---
 *** find : ***
+<!-- more -->
 ```
 let arr=[1,2,234,'sdf',-2];
 arr.find(function(x){

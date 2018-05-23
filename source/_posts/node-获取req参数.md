@@ -4,7 +4,10 @@ date: 2017-04-6 10:35:15
 tags: [node]
 ---
 
-# 获取request参数的四种方法:
+<center>
+ 
+# 获取request参数的四种方法: #
+ </center>
 <!-- more -->
 1. ** req.body **
 	解析body不是nodejs默认提供的，你需要载入body-parser中间件才可以使用req.body

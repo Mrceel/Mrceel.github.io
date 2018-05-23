@@ -3,7 +3,10 @@ title: CommonJS规范
 date: 2017-01-28 16:36:31
 tags: [CommonJS,规范]
 ---
-# 定义模块 #
+<center> 
+
+# 定义模块 # 
+</center>
 <!-- more -->
 在每个模块内部，module变量代表当前模块。它的exports属性是对外的接口，将模块的接口暴露出去。其他文件加载该模块，实际上就是读取module.exports变量。
 

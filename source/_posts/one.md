@@ -3,6 +3,8 @@ title: 数组去重
 date: 2017-02-13 21:58:49
 tags: [Array]
 ---
+<center> ** Array **</center>
+<!-- more -->
 **1.**思想:遍历元素组,建立新数组。利用indexOf判断新数组中是否存在原数组中的第i项,不存在便添加进去。<small>ps:这里可以封装函数</small>
 ```javascript
 var arr = [12, 5, 8, 12, 6, 4, 8, 5, 3],

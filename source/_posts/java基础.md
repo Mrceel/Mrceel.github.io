@@ -3,9 +3,11 @@ title: java基础
 date: 2018-04-01 09:39:32
 tags: [java]
 ---
-<p style="font-size: 12px">本文采用对比式学习</p>
+
+<center>
 
 # Hello World
+</center>
 <!-- more -->
 javascript
 ```javascript

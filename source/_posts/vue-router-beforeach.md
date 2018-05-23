@@ -4,7 +4,10 @@ date: 2017-04-13 15:44:35
 tags: [vue, vue-router]
 ---
 
-# vue-router (导航守卫)
+<center>
+
+# vue-router (导航守卫) 
+</center>
 <!-- more -->
 vue-router 提供的导航守卫主要用来通过跳转或取消的方式守卫导航。有多种机会植入路由导航过程中：全局的, 单个路由独享的, 或者组件级的。
 

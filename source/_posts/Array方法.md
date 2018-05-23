@@ -3,7 +3,10 @@ title: Array方法
 date: 2017-01-12 20:06:19
 tags: [Array]
 ---
-# join() #
+<center> 
+
+# join() # 
+</center>
 <!-- more -->
 join(separator): 将数组的元素组起一个字符串，以separator为分隔符，省略的话则用默认用逗号为分隔符，该方法只接收一个参数：即分隔符。
 ```

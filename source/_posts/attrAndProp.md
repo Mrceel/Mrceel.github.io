@@ -4,7 +4,10 @@ date: 2017-02-27 09:58:40
 tags: [JQuery,attr,prop]
 ---
 
-# jquery中attr和prop的区别
+<center> 
+
+# jquery中attr和prop的区别 #
+ </center>
 <!-- more -->
 在高版本的jquery引入prop方法后，什么时候该用prop？什么时候用attr？它们两个之间有什么区别？这些问题就出现了。
 

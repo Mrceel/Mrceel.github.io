@@ -4,7 +4,10 @@ date: 2017-03-22 11:39:32
 tags: [each,JQuery]
 ---
 
-# $().each()
+<center> 
+
+# $().each() # 
+</center>
 <!-- more -->
 ```javascript
 $('input[type = "text"]').each((idx,ite)=>{

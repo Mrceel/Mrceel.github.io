@@ -3,7 +3,10 @@ title: ES6之字符串扩展方法(常用)
 date: 2017-01-30 19:23:23
 tags: [ES6,String]
 ---
-# includes #
+<center> 
+
+# includes # 
+</center>
 <!-- more -->
 includes是判断是否包含的,直接返回布尔值
 ```

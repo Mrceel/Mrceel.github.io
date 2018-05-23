@@ -3,7 +3,7 @@ title: ES6 Array扩展
 date: 2017-02-10 21:16:21
 tags: [ ES6 , Array ]
 ---
-*** find : ***
+<center> *** find : *** </center>
 <!-- more -->
 ```
 let arr=[1,2,234,'sdf',-2];

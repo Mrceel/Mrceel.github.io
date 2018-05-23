@@ -4,7 +4,10 @@ date: 2017-03-29 09:48:13
 tags: [ Node, MySQL]
 ---
 
+<center> 
+
 # 数据库
+</center>
 <!-- more -->
 Navicat for mysql 建表写入数据
 

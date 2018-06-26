@@ -2,6 +2,7 @@
 title: node 获取req参数
 date: 2017-04-6 10:35:15
 tags: [Node]
+categories: Node
 ---
 
 <center>

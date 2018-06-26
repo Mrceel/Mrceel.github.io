@@ -2,6 +2,7 @@
 title: 数组去重
 date: 2017-02-13 21:58:49
 tags: [Array]
+categories: JavaScript
 ---
 <center> ** Array **</center>
 <!-- more -->

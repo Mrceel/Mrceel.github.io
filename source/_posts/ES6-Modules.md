@@ -2,6 +2,7 @@
 title: ES6 Modules
 date: 2017-02-11 18:45:12
 tags: [ES6]
+categories: JavaScript
 ---
 
 <center> ES6正式提出了内置的模块化语法，我们在浏览器端无需额外引入requirejs来进行模块化 。 </center>

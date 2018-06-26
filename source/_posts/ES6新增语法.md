@@ -2,6 +2,7 @@
 title: ES6新增语法
 date: 2017-02-05 14:47:14
 tags: [ES6]
+categories: JavaScript
 ---
 <center> 
 

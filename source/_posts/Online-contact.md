@@ -2,6 +2,7 @@
 title: Hexo NexT主题内接入网页在线联系功能
 date: 2017-04-30 20:10:35
 tags: [Hexo]
+categories: Hexo
 ---
 <center>
 

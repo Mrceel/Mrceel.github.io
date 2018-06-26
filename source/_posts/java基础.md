@@ -1,7 +1,8 @@
 ---
 title: java基础
 date: 2018-04-01 09:39:32
-tags: [java]
+tags: [Java]
+categories: Java
 ---
 
 <center>

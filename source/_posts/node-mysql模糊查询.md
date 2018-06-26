@@ -2,6 +2,7 @@
 title: node(express) + mysql 实现模糊查询
 date: 2017-05-4 20:22:38
 tags: [Node,MySQL]
+categories: Node
 ---
 <center>** Node + express + mysql + Navicat for mysql 实现模糊查询 **</center>
 <!-- more -->

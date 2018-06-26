@@ -2,6 +2,7 @@
 title: js 跨域
 date: 2017-02-20 22:26:45
 tags: [AJAX,JSONP]
+categories: JavaScript
 ---
 
 <center> 

@@ -2,6 +2,7 @@
 title: Object.entries() and Object.values()
 date: 2017-03-05 10:10:16
 tags: [ES7 ES8]
+categories: JavaScript
 ---
 
 <center> 

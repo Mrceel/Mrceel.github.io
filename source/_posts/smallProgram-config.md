@@ -2,6 +2,7 @@
 title: Small program - config
 date: 2017-04-20 18:47:08
 tags: [微信小程序]
+categories: 微信小程序
 ---
 
 <center> ** 小程序 - 配置 ** </center>

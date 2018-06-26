@@ -2,6 +2,7 @@
 title: $().each() 与 $.each() 区别
 date: 2017-03-22 11:39:32
 tags: [each,JQuery]
+categories: JavaScript
 ---
 
 <center> 

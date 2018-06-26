@@ -2,6 +2,7 @@
 title: node+mySQL接口
 date: 2017-03-29 09:48:13
 tags: [ Node, MySQL]
+categories: Node
 ---
 
 <center> 

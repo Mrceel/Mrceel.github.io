@@ -2,6 +2,7 @@
 title: Array方法
 date: 2017-01-12 20:06:19
 tags: [Array]
+categories: JavaScript
 ---
 <center> 
 

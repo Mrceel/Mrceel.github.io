@@ -7,7 +7,7 @@ title: 八小时之外     #网站标题
 subtitle:    #网站副标题
 #description 主要作用 seo
 description:    #网站描述
-author: Mrceel  #您的名字
+author: 刘崇  #您的名字
 language: zh-Hans  #网站使用的语言
 timezone:          #网站时区。Hexo 默认使用您电脑的时区。时区列表。比如说：America/New_York, Japan, 和 UTC
 
@@ -86,10 +86,18 @@ search:
   format: html
   limit: 10000
 
+# sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
   repo:
-  repository: git@github.com:Mrceel/Mrceel.github.io.git
+  repository: 
+    github: git@github.com:Mrceel/Mrceel.github.io.git
+    coding: git@git.coding.net:ceel/ceel.coding.me.git
   branch: master

@@ -2,11 +2,9 @@
 title: webpack 使用/配置
 date: 2018-03-25 17:52:03
 tags: [Webpack]
+categories: Webpack
 ---
-<center> 
-
 # 入口和输出
-</center>
 <!-- more -->
 ## 下载 webpack
 

@@ -2,7 +2,7 @@
 title: python-高级特性
 date: 2018-06-08 17:52:03
 tags: [Python]
-categories: JavaScript
+categories: Python
 ---
 #### 切片
 

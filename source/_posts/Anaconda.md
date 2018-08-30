@@ -1,9 +1,11 @@
 ---
-title: Anaconda 安装教程
+title: Anaconda 安装以及使用
 date: 2018-08-23 17:52:03
 tags: [Python]
 categories: Python
 ---
+Anaconda安装包地址:https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/
+<!-- more -->
 conda 的包管理：
 例如安装`scipy`
 ```python

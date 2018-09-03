@@ -1,7 +1,7 @@
 ---
 title: class 类--初识
 date: 2017-01-17 15:37:03
-tags: [ES6,面向对象]
+tags: [Es6,面向对象]
 categories: JavaScript
 ---
 <center>

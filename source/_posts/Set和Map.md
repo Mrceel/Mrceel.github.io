@@ -1,7 +1,7 @@
 ---
 title: Set 和 Map
 date: 2018-05-11 17:35:10
-tags: [javascript]
+tags: [javascript, Es6]
 categories: JavaScript
 ---
 ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。

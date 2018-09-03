@@ -1,7 +1,7 @@
 ---
 title: Webpack 使用/配置
 date: 2018-03-25 17:52:03
-tags: [Webpack]
+tags: [ webpack ]
 categories: Webpack
 ---
 从零开始配置 Webpack； 在实际项目开发中，零配置是不存在的。

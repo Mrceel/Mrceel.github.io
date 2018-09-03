@@ -1,7 +1,7 @@
 ---
 title: ES6 Modules
 date: 2017-02-11 18:45:12
-tags: [ES6]
+tags: [Es6]
 categories: JavaScript
 ---
 

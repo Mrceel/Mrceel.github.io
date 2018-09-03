@@ -1,7 +1,7 @@
 ---
 title: ES6 Array扩展
 date: 2017-02-10 21:16:21
-tags: [ ES6 , Array ]
+tags: [ Es6 ,JavaScript Array ]
 categories: JavaScript
 ---
 <center> *** find : *** </center>

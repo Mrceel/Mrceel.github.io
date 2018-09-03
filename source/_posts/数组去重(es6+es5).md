@@ -1,7 +1,7 @@
 ---
 title: 数组去重(2)
 date: 2017-05-22 10:48:28
-tags: [Array]
+tags: [JavaScript Array]
 categories: JavaScript
 ---
 ** 1. ** 利用一个json对象

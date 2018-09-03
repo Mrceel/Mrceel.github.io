@@ -1,8 +1,8 @@
 ---
 title: attr prop 区别
 date: 2017-02-27 09:58:40
-tags: [JQuery,attr,prop]
-categories: JavaScript
+tags: [JQuery]
+categories: JQuery
 ---
 
 <center> 

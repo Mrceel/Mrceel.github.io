@@ -1,7 +1,7 @@
 ---
 title: router-beforeEach
 date: 2017-04-13 15:44:35
-tags: [Vue, Vue-router]
+tags: [Vue]
 categories: JavaScript
 ---
 

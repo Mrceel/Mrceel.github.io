@@ -2,6 +2,7 @@
 title: Java-字符串方法
 date: 2018-04-12 16:13:23
 tags: [Java]
+categories: Java
 ---
 为了能方便记忆，想看就看。这里记录一下Java的字符串方法。
 <!-- more -->

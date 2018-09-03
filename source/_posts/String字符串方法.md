@@ -1,7 +1,7 @@
 ---
 title: String字符串方法
 date: 2017-02-08 19:47:29
-tags: [String]
+tags: [JavaScript String]
 categories: JavaScript
 ---
 <center> 

@@ -1,7 +1,7 @@
 ---
 title: CommonJS规范
 date: 2017-01-28 16:36:31
-tags: [CommonJS,规范]
+tags: [CommonJS]
 categories: 前端
 ---
 <center> 

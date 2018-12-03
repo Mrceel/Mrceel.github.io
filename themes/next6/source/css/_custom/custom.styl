@@ -1,0 +1,372 @@
+// // Custom styles.
+// //设置宽度大于1200px 使用此样式
+
+btnBgColor = #f79533;
+btnStyle()
+	border-radius arguments
+	background-color rgba(255, 255, 255, .6)
+	box-shadow inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35)
+btnHoverStyle()
+	color: #fff
+	box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+	background-image: linear-gradient(90deg, #a166ab 0%, #f37055 50%, #a166ab 100%)!important;
+@media screen and (min-width:1200px) {
+//内容宽度
+	.container .main-inner{
+		width: 1000px;
+	}
+
+
+// 	//背景图片
+    body {
+	    // background-image:url("/images/timg.jpg");
+	    // background-image:url("/images/xingyun.jpg");
+	    // background-image:url("/images/bodyBg.jpg");
+	    // background-image:url("/images/shu.jpg");
+	    background-repeat: no-repeat;
+	    background-attachment:fixed;
+		background-size: 100% 100%;
+    }
+
+// 	//头部样式
+	#header.header{
+		.custom-logo-image{
+			border-radius: 50%
+		}
+
+// 		padding-top: 40px;
+// 		.header-inner{
+// 			padding-top: 40px;
+// 			padding-bottom: 20px;
+// 			.site-meta-headline .custom-logo-image {
+// 				border-radius: 50%;
+// 				padding: 0px;
+// 			}
+// 			//大标题
+// 			.site-title{
+// 				color: #A79012;
+// 				font-family: STXingkai;
+// 				font-size: 50px;
+// 			}
+// 			//标题背景色
+// 			.brand {
+// 				background: transparent;
+// 			}
+			
+// 		}
+	}
+// 	// 导航
+// 	nav.site-nav {
+// 		padding-top: 30px;
+// 		.menu .menu-item {
+// 			padding: 0 30px;
+// 			margin: 0 0;
+// 			.fa{
+// 				font-size: 28px;
+// 				color: #B2BF5D;
+// 			}
+// 			a {
+// 				color: #B2BF5D;
+// 				border: none!important;
+// 			}
+// 			// hover时样式
+// 			a:hover {
+// 				color: #A79012!important;
+// 				border-bottom: none;
+// 			}
+// 			a:hover .fa{
+// 				color: #A79012!important;
+// 			}
+// 		}
+// 		//选中时的样式
+// 		.menu-item-active {
+// 			a {
+// 				color: #A79012!important;
+// 			}
+// 			.fa {
+// 				color: #A79012!important;
+// 			}
+// 		}
+// 		//导航中间的线
+// 		.xian {
+// 			display: inline-block;	
+// 			width: 1px;
+// 			padding: 20px 0;
+// 			background: #B2BF5D;
+// 		}
+// 	}
+
+	// 遮罩层
+	//.c_bottom_title {
+	//	width: 100%;
+	//	height: 50px;
+	//	background: red;
+	//	opacity: .5;
+	//	position: absolute;
+	//	bottom: 25px;
+	//	left: 0;
+//
+	//}
+
+// 	//首页文章
+// 	section .post.post-type-normal:nth-child(odd){
+// 		margin-right: 2%
+// 	}
+// 	#content section .post.post-type-normal{
+// 		background: #F2F7D3!important;
+// 		padding: 5px 25px;
+// 		padding-bottom: 25px;
+// 		margin-top: 15px!important;
+// 		border-radius: 5px;
+// 		overflow: hidden;
+// 		//background-image:url("/images/snrz.png")!important;
+// 		box-shadow: 0px 0px 5px 0px rgba(225,225,225,.8);
+// 		//background-image:url("/images/shu.jpg");
+// 		//background-size: 100% 100%;
+
+// 		width: 48%;
+// 		height: 340px;
+// 		display: inline-block;
+// 		box-sizing: border-box;
+// 		position: relative;
+// 		.post-button{
+// 			position: absolute;
+// 			margin-top: 100px;
+// 			top: 0px;
+// 			left: 0px;
+// 		}
+// 		.post-title-link {
+// 			width: 100%;
+// 			overflow:hidden;
+// 			text-overflow:ellipsis;
+// 			white-space:nowrap;
+// 		}
+// 		.post-header {
+// 			overflow hidden;
+// 		}
+// 		//隐藏评论数
+// 		.post-comments-count{
+// 			// display: none;
+// 		}
+
+// 		.post-body p:first-child{
+// 			width: 100%;
+// 			overflow : hidden; 
+// 			text-overflow: ellipsis; 
+// 			display: -webkit-box; 
+// 			-webkit-line-clamp: 2; 
+// 			-webkit-box-orient: vertical; 
+// 			-webkit-line-clamp:2;
+// 		}
+
+		
+
+// 		//阅读全文按钮
+		div.post-button a.btn {
+			color: #555 !important;
+			background-color: rgba(255, 255, 255, .6);
+			border-radius: 3px;
+			font-size: 15px;
+			box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+			border: none !important;
+			transition-property: unset;
+			padding: 0px 15px;
+
+		}
+		div.post-button a.btn:hover{
+			color: rgb(255, 255, 255) !important;
+			border-radius: 3px;
+			font-size: 15px;
+			box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+			background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+		}
+
+// 	}
+// 	//文章hover
+// 	.post.post-type-normal:hover{
+// 		box-shadow: 0px 0px 5px 0px #e14fad;
+// 	}
+
+// 	#posts .post.post-type-normal{
+// 		background: #fff;
+// 		padding: 5px 25px;
+// 		padding-bottom: 25px;
+// 		margin-top: 40px;
+// 		border-radius: 5px;
+// 		overflow: hidden;
+// 		// background: rgba(225,225,225,.7);
+// 		box-shadow: 0px 0px 5px 0px rgba(225,225,225,.8);
+// 		//文章标题下面小icon
+// 		.post-meta-item-icon {
+// 			color: #0f0f0d;
+// 		}
+// 		.post-time {
+// 			time {
+// 				color: #bbb;
+// 			}
+// 		}
+// 		img {
+// 			width: 100%;
+// 		}
+// 	}
+
+// 	.posts-expand {
+// 		padding-top: 0;
+// 		//标题hover
+// 		.post-title-link::before{
+// 			background-image: linear-gradient(to right, #ef4e7b 0%, #FF1361 29%, #ef4e7b 67%, #FFF800 100%);
+// 		}
+// 	}
+
+
+// 	// 侧边栏样式
+// 	#sidebar {
+// 		background-color: rgba(0,0,0, .53);
+// 		box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.53);
+// 	}
+
+
+
+// 	//去掉页面底部的横线
+// 	.pagination{
+// 		margin-top: 80px;
+// 		border: none;
+// 	}
+
+	
+		
+
+	//底部分页按钮
+	.pagination {
+		.page-number, .next, .prev{
+			background btnBgColor
+			border: none
+			btnStyle(4px)
+		}
+		//选中项
+		.current{
+			background-image: linear-gradient(90deg,  #ef4e7b 0%, #f37055 50%, #a166ab 100%) !important;
+		}
+		
+	}
+	.pagination .prev:hover, .pagination .next:hover, .pagination .page-number:hover {
+		border: none
+		// color: #fff
+		// box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+		// background-image: linear-gradient(90deg, #a166ab 0%, #f37055 50%, #a166ab 100%)!important;
+		btnHoverStyle()
+	}
+// 	//标签页面小标签样式
+// 	.tag-cloud-tags a{
+// 		background: #fff;
+// 		padding: 2px 9px;
+// 		border-radius: 10px;
+// 		border: none;
+// 	}
+// 	.tag-cloud-tags a:hover {
+// 		background: #aaa;
+// 		color: #A79012!important;
+// 	}
+	//评论背景色
+	#comments{
+		background: #fff;
+		margin: 60px 0;
+		padding: 25px;
+		border-radius: 5px;
+		.info{
+			display: none;
+		}
+	}
+
+// 	// //时间轴样式
+// 	// .posts-collapse {
+// 	//     margin: 50px 0px;
+// 	// }
+// 	// @media (max-width: 1023px) {
+// 	//     .posts-collapse {
+// 	//         margin: 50px 20px;
+// 	//     }
+// 	// }
+
+
+}
+
+// // 手持设备
+// @media screen and (max-width:768px){
+
+// }
+
+// //*****************************通用*******************************//
+//文章之间的小短线
+.post-footer {
+	// display: none;
+	.post-eof{
+		margin-top: 0;
+		background-color: transparent;
+	}
+}
+
+	//去掉页面底部的横线
+	.pagination{
+		margin-top: 80px;
+		border: none;
+	}
+
+//网页顶部的黑色线
+.headband {
+	display none;
+}
+
+rigthbottom()
+	border-radius: 8px;
+	background: #f79533;
+	right: 15px;
+	opacity: 0.7;
+	box-sizing: content-box;
+	btnStyle(8px)
+	color: #000
+
+//返回顶部样式
+.back-to-top.back-to-top-on{
+	bottom: 10px;
+	padding: 0px 8px;
+	rigthbottom()
+	
+}
+.back-to-top.back-to-top-on:hover ,.sidebar-toggle:hover {
+	btnHoverStyle()
+}
+.sidebar-toggle:hover {
+	.sidebar-toggle-line {
+		background: #fff
+	}
+}
+
+.sidebar-toggle{
+	.sidebar-toggle-line {
+		background: #000
+	}
+	padding: 5px 12px 3px;
+	rigthbottom()
+}
+
+
+
+// 设置滚动条的样式
+// 参考https://segmentfault.com/a/1190000003708894
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+// 滚动槽 
+::-webkit-scrollbar-track {
+	background: #eee;
+}
+// 滚动条滑块 
+::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background-color: #ccc;
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgb(247, 149, 51);
+}

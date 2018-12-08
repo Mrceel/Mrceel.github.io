@@ -33,3 +33,17 @@ categories: 模板
 {% if false %} 不显示 {% endif %}
 ```
 标签里面还可以是 for  变量 等.
+
+## 模板引入
+其实这些官网都有，只是没有特别标注，不容易找到...
+引入模板：
+```
+{% include "xxx.html/swig/..." %}
+// 如果引入的模板想用当前模板的数据
+//使用 with
+{% include "about.swig" with object %}
+// 这样就可以在about.swig 文件中使用 object 对象的数据了
+
+```
+
+

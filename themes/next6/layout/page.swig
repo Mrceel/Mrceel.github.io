@@ -8,6 +8,8 @@
     #}{{ __('title.category') + page_title_suffix }}{#
   #}{% elif page.type === "tags" and not page.title %}{#
     #}{{ __('title.tag') + page_title_suffix }}{#
+  #}{% elif page.type === "about" and not page.title %}{#
+    #}{{ __('title.about') + page_title_suffix }}{#
   #}{% else %}{#
     #}{{ page.title + page_title_suffix }}{#
   #}{% endif %}{#
@@ -22,7 +24,8 @@
     {### PAGE BLOCK ###}
     {##################}
     <div class="post-block page">
-      {% include '_partials/page-header.swig' %}
+      {% set about = page.type %}
+      {% include '_partials/page-header.swig' with about %}
       {#################}
       {### PAGE BODY ###}
       {#################}
@@ -58,6 +61,8 @@
               {{ list_categories() }}
             </div>
           </div>
+        {% elif page.type === 'about' %}
+          {% include 'about.swig'%}
         {% else %}
           {{ page.content }}
         {% endif %}

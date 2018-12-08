@@ -15,8 +15,16 @@ song_sheet:
         url: 'http://m10.music.126.net/20181127171131/2231b65c2a6b72b23bdf2ea7db4b0baa/ymusic/a4e6/a6ca/1ca8/2e1b74d96e7c526620d3a98b4acfdcf5.mp3'
         cover: 'http://p2.music.126.net/O1Z5YwyUl0tbdHHDlmdd1g==/109951163018677033.jpg?param=130y130'
         theme: ''
-
-
+touxiang: 
+  img: /images/avatar.jpg
+  name: '曹永强'
+  qq: 286120677
+  tel: 1560121****
+  love: 
+    name1: 游泳
+    name2: 音乐
+    name3: 运动
+    name4: 做饭（是不是有点特殊）
 
 
 
@@ -177,8 +185,8 @@ first_screen:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
-# scheme: Mist
+# scheme: Muse
+scheme: Mist
 # scheme: Pisces
 # scheme: Gemini
 

@@ -24,7 +24,6 @@ touxiang:
     name1: 游泳
     name2: 音乐
     name3: 运动
-    name4: 做饭（是不是有点特殊）
 
 
 
@@ -413,6 +412,7 @@ android_chrome_color: "#222"
 custom_logo:
   enabled: true
   image:  /images/avatar.jpg
+  titleImg: /images/title-logo/10.png
 
 # Code Highlight theme 代码块颜色
 # Available values: normal | night | night eighties | night blue | night bright

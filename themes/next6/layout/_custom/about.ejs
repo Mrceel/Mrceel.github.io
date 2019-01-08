@@ -1,0 +1,545 @@
+<div id="about">
+    <div class='about-main'>
+        <div class='author'>
+            <dl>
+                <dt class='author-head'><img src="<%=theme.author.img%>"></dt>
+                <dd>
+                    <h3><%=theme.author.title%></h3>
+                    <ul class='about-site-posts'>
+                        <li><a href='/'>首页</a></li>
+                        <li><a href='/'>(<%= site.posts.length%>)&nbsp;日志</a></li>
+                        <li><a href='/categories/'>(<%= site.categories.length%>)&nbsp;分类</a></li>
+                        <li><a href='/tags/'>(<%= site.tags.length%>)&nbsp;标签</a></li>
+                    </ul>
+                    <div class='tell-me'>
+                        <p><i class='fa fa-user-circle' style='margin-right: 5px'></i>关于我</p>
+                        <div>
+                            <% for(var i in theme.tell_me){ %>
+                                <a href='<%=theme.tell_me[i].link%>'><i class='fa fa-<%=theme.tell_me[i].icon%>' style='margin-right: 5px'></i><%= theme.tell_me[i].name %></a>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class='friendship-link'>
+                        <p><i class='fa fa-link' style='margin-right: 5px'></i>友情链接</p>
+                        <div>
+                        <% for(var i in theme.friendship){ %>
+                            <a href='<%=theme.friendship[i].link%>'><%= theme.friendship[i].name %></a>
+                        <% } %>
+
+                        </div>
+                    </div>
+                    <div class='recommend'>
+                        <p><i class='fa fa-eye' style='margin-right: 5px'></i>推荐阅读</p>
+                        <div>
+                        <% for(var i in theme.recommend){ %>
+                            <a href='<%=theme.recommend[i].link%>'><%= theme.recommend[i].name %></a>
+                        <% } %>
+
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class='skill'>
+            <div class='k'>
+                <% for(var item in theme.song_sheet){ %>
+                    <a data-theme="<%= theme.song_sheet[item].theme %>" data-cover="<%= theme.song_sheet[item].cover %>" data-name="<%= theme.song_sheet[item].name %>" data-url="<%=theme.song_sheet[item].url%>" data-artist="<%=theme.song_sheet[item].artist%>"></a>
+                <% } %>
+            </div>
+            <div id="aplayer"></div>
+            <p class='skill-title'></p>
+            <div id='skill-chart'></div>
+        </div>
+    </div>
+    <%- partial('_partial/footer' , {}, {cache: true}) %>
+</div>
+<script>
+var arr_mp3 = [];
+$('.k a').each(function(idx, item){
+    let _json = {};
+    _json.name = $(item).attr('data-name');
+    _json.artist = $(item).attr('data-artist');
+    _json.url = $(item).attr('data-url');
+    _json.cover = $(item).attr('data-cover');
+    _json.theme = $(item).attr('data-theme');
+    arr_mp3.push(_json);
+})
+
+const ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    theme: '#f5e5f5',
+    loop: 'all', //循环播放 all one none
+    preload: 'metadata', //预加载 auto none metadata
+    listFolded: true,//默认折叠
+    audio: arr_mp3
+});
+
+
+ var colors = ['#FFAE57', '#FF7853', '#EA5151', '#CC3F57', '#9A2555'];
+var bgColor = '#2E2733';
+// var bgColor = '#737777';
+
+var itemStyle = {
+    star5: {
+        color: colors[0]
+    },
+    star4: {
+        color: colors[1]
+    },
+    star3: {
+        color: colors[2]
+    },
+    star2: {
+        color: colors[3]
+    }
+};
+
+var data = [{
+    name: '服务端',
+    itemStyle: {
+        color: colors[2]
+    },
+    children: [{
+        name: 'MySQL',
+        children: [ {
+            name: '',
+             label: {
+                color: '#fff',
+                downplay: {
+                    opacity: 0.5
+                }
+            },
+            children: [{
+                name: '',
+                value: 1, //所占面积
+                label: {
+                    color: '#FF7853'
+                },
+                itemStyle: {
+                    color: '#EA5151'
+                }
+            }]
+        }]
+    },{
+        name: 'Python',
+        children: [ {
+            name: 'Django',
+            label: {
+                color: '#fff',
+                downplay: {
+                    opacity: 0.5
+                }
+            },
+            children: [{
+                name: 'web and app',
+                value: 2, //所占面积
+                label: {
+                    color: '#FF7853'
+                },
+                itemStyle: {
+                    color: '#EA5151'
+                }
+            },{
+                name: '网络爬虫',
+                value: 1, //所占面积
+                label: {
+                    color: '#FF7853'
+                },
+                itemStyle: {
+                    color: '#EA5151'
+                }
+            }]
+        }]
+    },{
+        name: 'Java',
+        children: [ {
+            name: '',
+             label: {
+                color: '#fff',
+                downplay: {
+                    opacity: 0.5
+                }
+            },
+            children: [{
+                name: 'Spring',
+                value: 1, //所占面积
+                label: {
+                    color: '#FF7853'
+                },
+                itemStyle: {
+                    color: '#EA5151'
+                }
+            }]
+        }]
+    },{
+        name: 'Node',
+        children: [ {
+            name: '',
+             label: {
+                color: '#fff',
+                downplay: {
+                    opacity: 0.5
+                }
+            },
+            children: [{
+                name: ' experss',
+                value: 1, //所占面积
+                label: {
+                    color: '#FF7853'
+                },
+                itemStyle: {
+                    color: '#EA5151'
+                }
+            }]
+        }]
+    }]
+},{
+    name: '前端',
+    itemStyle: {
+        color: colors[1]
+    },
+    children: [{
+        name: '页面制作',
+        children: [ {
+            name: 'Html5',
+             label: {
+                color: '#fff',
+                downplay: {
+                    opacity: 0.5
+                }
+            },
+            children: [{
+                name: '熟练各种布局方式',
+                value: 2, //所占面积
+                label: {
+                    color: '#FF7853'
+                },
+                itemStyle: {
+                    color: '#EA5151'
+                }
+            },{
+                name: 'Convas',
+                value: 1, //所占面积
+                label: {
+                    color: '#FF7853'
+                },
+                itemStyle: {
+                    color: '#EA5151'
+                }
+            }]
+        },{
+            name: 'Css3',
+             label: {
+                color: '#fff',
+                downplay: {
+                    opacity: 0.5
+                }
+            },
+            children: [{
+                name: 'Less',
+                value: 1, //所占面积
+                label: {
+                    color: '#FF7853'
+                },
+                itemStyle: {
+                    color: '#EA5151'
+                }
+            },{
+                name: 'Sass',
+                value: 1, //所占面积
+                label: {
+                    color: '#FF7853'
+                },
+                itemStyle: {
+                    color: '#EA5151'
+                }
+            },{
+                name: 'Scss',
+                value: 1, //所占面积
+                label: {
+                    color: '#FF7853'
+                },
+                itemStyle: {
+                    color: '#EA5151'
+                }
+            }]
+        },]
+    },{
+        name: '页面交互',
+        children: [ {
+            name: 'Javascript',
+             label: {
+                color: '#fff',
+                downplay: {
+                    opacity: 0.5
+                }
+            },
+            children: [{
+                name: 'Typrscript',
+                value: 1, //所占面积
+                label: {
+                    color: '#FF7853'
+                },
+                itemStyle: {
+                    color: '#EA5151'
+                }
+            },{
+                name: 'Angular',
+                value: 1, //所占面积
+                label: {
+                    color: '#FF7853'
+                },
+                itemStyle: {
+                    color: '#EA5151'
+                }
+            },{
+                name: 'React',
+                value: 1, //所占面积
+                label: {
+                    color: '#FF7853'
+                },
+                itemStyle: {
+                    color: '#EA5151'
+                }
+            },{
+                name: 'Vue',
+                value: 2, //所占面积
+                label: {
+                    color: '#FF7853'
+                },
+                itemStyle: {
+                    color: '#EA5151'
+                }
+            }]
+        },]
+    },{
+        name: '数据处理',
+        children: [ {
+            name: '数据获取',
+             label: {
+                color: '#fff',
+                downplay: {
+                    opacity: 0.5
+                }
+            },
+            children: [{
+                name: 'Ajax',
+                value: 2, //所占面积
+                label: {
+                    color: '#FF7853'
+                },
+                itemStyle: {
+                    color: '#EA5151'
+                }
+            },{
+                name: 'Jsonp',
+                value: 2, //所占面积
+                label: {
+                    color: '#FF7853'
+                },
+                itemStyle: {
+                    color: '#EA5151'
+                }
+            }]
+        }]
+    }]
+}];
+
+for (var j = 0; j < data.length; ++j) {
+    var level1 = data[j].children;
+
+    for (var i = 0; i < level1.length; ++i) {
+        
+        level1[i].itemStyle = {
+            color: data[j].itemStyle.color
+        };
+    }
+}
+
+option = {
+    backgroundColor: bgColor,
+    color: colors,
+    series: [{
+        type: 'sunburst',
+        center: ['50%', '55%'],
+        data: data,
+        sort: function (a, b) {
+            if (a.depth === 1) {
+                return b.getValue() - a.getValue();
+            }
+            else {
+                return a.dataIndex - b.dataIndex;
+            }
+        },
+        label: {
+            rotate: 'radial',
+            color: bgColor
+        },
+        itemStyle: {
+            borderColor: bgColor,
+            borderWidth: 2
+        },
+        levels: [{}, {
+            r0: 0,
+            r: 40,
+            label: {
+                rotate: 0
+            }
+        }, {
+            r0: 40,
+            r: 105
+        }, {
+            r0: 115,
+            r: 140,
+            itemStyle: {
+                shadowBlur: 2,
+                shadowColor: colors[2],
+                color: 'transparent'
+            },
+            label: {
+                rotate: 'tangential',
+                fontSize: 10,
+                color: colors[0]
+            }
+        }, {
+            r0: 140,
+            r: 145,
+            itemStyle: {
+                shadowBlur: 80,
+                shadowColor: colors[0]
+            },
+            label: {
+                position: 'outside',
+                textShadowBlur: 5,
+                textShadowColor: '#333',
+            },
+            downplay: {
+                label: {
+                    opacity: 0.5
+                }
+            }
+        }]
+    }]
+};
+    echarts.init(document.getElementById('skill-chart')).setOption(option);
+</script>
+<style>
+#about{
+		$fontColr: rgb(155, 153, 153);
+		$fontHoverColr: rgb(219, 215, 215);
+		background: #2E2733;
+		min-height: 100vh;
+		padding: 6% 0 0 0;
+		.about-main{
+			width: 80%;
+			margin: 0 auto 0;
+			min-height: 80vh;
+			overflow: hidden;
+			.author{
+				float: left;
+				width: 35%;
+				padding-right: 2%;
+				h3{
+					text-align: center;
+					font-size: 32px;
+					margin: 10px 0 15px;
+					color: $fontColr;
+				}
+				.author-head{
+					width: 200px;
+					height: 200px;
+					margin: 0 auto 0;
+					@include borderRadius(50%);
+					overflow: hidden;
+					img{width: 100%;height: 100%;}
+				}
+				.about-site-posts{
+					text-align: center;
+					li{
+						display: inline-block;
+						font-size: 16px;
+						font-weight: 500;
+						a{
+							color: $fontColr;
+							&:hover{
+								color: $fontHoverColr;
+							}
+						}
+						&::after{
+							content: '';
+							height: 18px;
+							margin: 0 8px;
+							display: inline-block;
+							border-right: 2px solid #000;
+							vertical-align: middle;
+						}
+						&:last-child {
+							&::after{
+								display: none;
+							}
+						}
+					}
+				}
+				.tell-me,.recommend, .friendship-link{
+					margin: 40px auto 0;
+					p{
+						font-size: 18px;
+						font-weight: 500;
+						text-align: center;
+						color: $fontColr;
+					}
+					& > div{
+						margin-top: 15px;
+						text-align: center;
+						a{
+							display: inline-block;
+							margin: 3px 5px;
+							position: relative;
+							font-size: 14px;
+							color: $fontColr;
+							&:hover{
+								color: $fontHoverColr;
+								&::after{
+									border-top: 1px solid $fontHoverColr;
+								}
+							}
+							&::after{
+								content: '';
+								display: block;
+								position: absolute;
+								left: 0;
+								bottom: -3px;
+								width: 100%;
+								border-top: 1px solid #686b6b;
+							}
+							
+						}
+					}
+				}
+			}
+			.skill{
+				float: left;
+				width: 63%;
+				.aplayer-info{
+					background: $fontColr;
+					background: #FFAE57;
+					background: #DCBA48;
+
+				}
+				& > p {
+					text-align: center;
+					white-space: 10px;
+					font-size: 20px;
+					font-weight: 600px;
+					padding-bottom: 20px;
+					color: #c5d1d1;
+				}
+				#skill-chart{
+					width: 100%;
+					height: 450px;
+					
+				}
+			}
+		}
+	}
+</style>

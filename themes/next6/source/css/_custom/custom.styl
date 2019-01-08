@@ -1,0 +1,232 @@
+// // Custom styles.
+// //设置宽度大于1200px 使用此样式
+btnBgColor = #f79533;
+btnStyle()
+	border-radius arguments
+	background-color rgba(255, 255, 255, .6)
+	box-shadow inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35)
+btnHoverStyle()
+	color: #fff
+	box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+	background-image: linear-gradient(90deg, #a166ab 0%, #f37055 50%, #a166ab 100%)!important;
+@media screen and (min-width:1200px) {
+//内容宽度
+	.container .main-inner{
+		width: 1000px;
+	}
+
+
+// 	//背景图片
+    body {
+	    // background-image:url("/images/timg.jpg");
+	    // background-image:url("/images/xingyun.jpg");
+	    // background-image:url("/images/bodyBg.jpg");
+	    // background-image:url("/images/shu.jpg");
+	    background-repeat: no-repeat;
+	    background-attachment:fixed;
+		background-size: 100% 100%;
+    }
+
+// 	//头部样式
+	#header.header{
+		.custom-logo-image{
+			border-radius: 50%
+		}
+
+	}
+	
+
+//阅读全文按钮
+	div.post-button a.btn {
+		color: #555 !important;
+		background-color: rgba(255, 255, 255, .6);
+		border-radius: 3px;
+		font-size: 15px;
+		box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+		border: none !important;
+		transition-property: unset;
+		padding: 0px 15px;
+
+	}
+	div.post-button a.btn:hover{
+		color: rgb(255, 255, 255) !important;
+		border-radius: 3px;
+		font-size: 15px;
+		box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+		background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+	}
+
+	//底部分页按钮
+	.pagination {
+		.page-number, .next, .prev{
+			background btnBgColor
+			border: none
+			btnStyle(4px)
+		}
+		//选中项
+		.current{
+			background-image: linear-gradient(90deg,  #ef4e7b 0%, #f37055 50%, #a166ab 100%) !important;
+		}
+		
+	}
+	.pagination .prev:hover, .pagination .next:hover, .pagination .page-number:hover {
+		border: none
+		// color: #fff
+		// box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+		// background-image: linear-gradient(90deg, #a166ab 0%, #f37055 50%, #a166ab 100%)!important;
+		btnHoverStyle()
+	}
+	//评论背景色
+	#comments{
+		background: #fff;
+		margin: 60px 0;
+		padding: 25px;
+		border-radius: 5px;
+		.info{
+			display: none;
+		}
+	}
+
+	//设置导航样式
+	#menu a{
+		// font-size: 16px;
+		}
+
+	.about{
+		display none!important
+		}
+	#about {
+		.skill{
+			background: #2E2733
+			overflow hidden
+		}
+		
+		.explain{
+			height 500px
+			width: 48%
+			float: left
+			dl{
+				width 100%
+				dt{
+					width 150px
+					height 150px
+					margin: 0 auto
+				}
+				dd{
+					ul,li{list-style: none
+						margin: 0
+						padding 0
+					}
+					h3{
+						text-align: center
+						color: #FF7853
+						margin 0
+					}
+					&>div{
+						margin: 0 30px;
+						&>p{
+							margin: 0!important
+							color: #FF7853
+							font-weight: 600
+							}
+						&>div{
+							padding: 0 30px;
+							color: #CC3F57
+							span{
+								padding-right 15px;
+							}
+							}
+						}
+						
+				}
+			}
+			}
+		#skill-chart{
+			width 50%
+			float: right
+		}
+	}
+	
+
+
+}
+
+// // 手持设备
+// @media screen and (max-width:768px){
+
+// }
+
+// //*****************************通用*******************************//
+//文章之间的小短线
+.post-footer {
+	// display: none;
+	.post-eof{
+		margin-top: 0;
+		background-color: transparent;
+	}
+}
+
+	//去掉页面底部的横线
+	.pagination{
+		margin-top: 80px;
+		border: none;
+	}
+
+//网页顶部的黑色线
+.headband {
+	display none;
+}
+
+rigthbottom()
+	border-radius: 8px;
+	background: #f79533;
+	right: 15px;
+	opacity: 0.7;
+	box-sizing: content-box;
+	btnStyle(8px)
+	color: #000
+
+//返回顶部样式
+.back-to-top.back-to-top-on{
+	bottom: 10px;
+	padding: 0px 8px;
+	rigthbottom()
+	
+}
+.back-to-top.back-to-top-on:hover ,.sidebar-toggle:hover {
+	btnHoverStyle()
+}
+.sidebar-toggle:hover {
+	.sidebar-toggle-line {
+		background: #fff
+	}
+}
+
+.sidebar-toggle{
+	.sidebar-toggle-line {
+		background: #000
+	}
+	padding: 5px 12px 3px;
+	rigthbottom()
+}
+
+
+
+// 设置滚动条的样式
+// 参考https://segmentfault.com/a/1190000003708894
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+// 滚动槽 
+::-webkit-scrollbar-track {
+	background: #eee;
+}
+// 滚动条滑块 
+::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background-color: #ccc;
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgb(247, 149, 51);
+}

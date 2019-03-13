@@ -9,14 +9,196 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/node-mysql%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/</loc>
+    <loc>http://yoursite.com/top/index.html</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/18-6-20/</loc>
+    <loc>http://yoursite.com/18-10-12/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/18-10-06/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/media/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/swig/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/10-09-27/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/10-09-24/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/18-09-20/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Django-%E6%8E%A5%E5%8F%A3/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Django-%E8%B7%A8%E5%9F%9F/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Django-%E4%BD%BF%E7%94%A8/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Python-mysqlclient/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Python-%E7%88%AC%E8%99%AB/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/python-openpyxl/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/BeautifulSoup/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/scrapy/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Anaconda/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Python-__name__/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/statistics-word-number/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Python-iamge%E6%A8%A1%E5%9D%97/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Python-random/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/js%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%98%AFPC%E7%AB%AF/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Python-re/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Python-time/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Python-%E5%AD%97%E5%85%B8/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Python-list%E6%96%B9%E6%B3%95/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Python-file/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Python-OS/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
@@ -37,132 +219,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/23%E6%9D%A1%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Anaconda/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Ajax/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/CommonJS%E8%A7%84%E8%8C%83/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Django-%E4%BD%BF%E7%94%A8/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/BeautifulSoup/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Django-%E8%B7%A8%E5%9F%9F/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Django-%E6%8E%A5%E5%8F%A3/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/ES6-Modules/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/ES6%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95(%E5%B8%B8%E7%94%A8)/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/ES6%E6%96%B0%E5%A2%9E%E8%AF%AD%E6%B3%95/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Python-OS/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/HexoNext/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Python-file/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Python-__name__/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Js-%E7%AE%97%E6%B3%95/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Python-iamge%E6%A8%A1%E5%9D%97/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Python-mysqlclient/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/Python-number%E6%96%B9%E6%B3%95/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
@@ -170,77 +226,28 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Python-random/</loc>
+    <loc>http://yoursite.com/Python-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/Python-list%E6%96%B9%E6%B3%95/</loc>
+    <loc>http://yoursite.com/18-6-20/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/Python-time/</loc>
+    <loc>http://yoursite.com/18-6-13/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/Set%E5%92%8CMap/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Python-%E5%AD%97%E5%85%B8/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/css-center/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/attrAndProp/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/each-each/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/String%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/es7/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/es6%E6%96%B0%E5%A2%9Earray/</loc>
+    <loc>http://yoursite.com/python-%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
@@ -254,14 +261,35 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/flex/</loc>
+    <loc>http://yoursite.com/triangles/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/js%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%98%AFPC%E7%AB%AF/</loc>
+    <loc>http://yoursite.com/%E6%B1%89%E8%AF%BA%E5%A1%94%E8%AF%A6%E8%A7%A3-python/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/python%20%E5%87%BD%E6%95%B0/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/HexoNext/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Set%E5%92%8CMap/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
@@ -282,105 +310,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/18-6-13/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/kuaYu/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/media/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/one/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/node-%E8%8E%B7%E5%8F%96req%E5%8F%82%E6%95%B0/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/node-mySQL%E6%8E%A5%E5%8F%A3/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/python-openpyxl/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/python-%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/python%E5%9F%BA%E7%A1%80/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/smallProgram-config/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/statistics-word-number/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/scrapy/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/triangles/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/swig/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/vue-router-beforeach/</loc>
+    <loc>http://yoursite.com/java%E5%9F%BA%E7%A1%80/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
@@ -394,21 +324,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/%E4%BA%8C%E5%8F%89%E6%A0%91-1/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/%E5%B0%8F%E4%BC%99-%E8%A6%81%E5%8A%A0%E6%B2%B9%E5%93%A6/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E8%8F%9C%E5%8D%95%E7%9A%84%E6%98%BE%E7%A4%BA/</loc>
+    <loc>http://yoursite.com/flex/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
@@ -422,14 +338,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/%E6%B1%89%E8%AF%BA%E5%A1%94%E8%AF%A6%E8%A7%A3-python/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>http://yoursite.com/Js-%E7%AE%97%E6%B3%95/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
@@ -450,49 +359,154 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/%E9%BC%A0%E6%A0%87%E6%BB%9A%E8%BD%AE%E4%BA%8B%E4%BB%B6-1/</loc>
+    <loc>http://yoursite.com/css-center/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/18-10-06/</loc>
+    <loc>http://yoursite.com/node-mysql%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/18-09-20/</loc>
+    <loc>http://yoursite.com/%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E8%8F%9C%E5%8D%95%E7%9A%84%E6%98%BE%E7%A4%BA/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/10-09-27/</loc>
+    <loc>http://yoursite.com/smallProgram-config/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/18-10-12/</loc>
+    <loc>http://yoursite.com/vue-router-beforeach/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/10-09-24/</loc>
+    <loc>http://yoursite.com/node-%E8%8E%B7%E5%8F%96req%E5%8F%82%E6%95%B0/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/Array%E6%96%B9%E6%B3%95/</loc>
+    <loc>http://yoursite.com/node-mySQL%E6%8E%A5%E5%8F%A3/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/each-each/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/es7/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/attrAndProp/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/kuaYu/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/%E5%B0%8F%E4%BC%99-%E8%A6%81%E5%8A%A0%E6%B2%B9%E5%93%A6/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/one/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/ES6-Modules/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/es6%E6%96%B0%E5%A2%9Earray/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/String%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/ES6%E6%96%B0%E5%A2%9E%E8%AF%AD%E6%B3%95/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/ES6%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95(%E5%B8%B8%E7%94%A8)/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/CommonJS%E8%A7%84%E8%8C%83/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/%E4%BA%8C%E5%8F%89%E6%A0%91-1/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/23%E6%9D%A1%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</loc>
+    
+    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Ajax/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
@@ -506,35 +520,21 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Python-re/</loc>
+    <loc>http://yoursite.com/%E9%BC%A0%E6%A0%87%E6%BB%9A%E8%BD%AE%E4%BA%8B%E4%BB%B6-1/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/Python-%E7%88%AC%E8%99%AB/</loc>
+    <loc>http://yoursite.com/Array%E6%96%B9%E6%B3%95/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/Python-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/java%E5%9F%BA%E7%A1%80/</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/python%20%E5%87%BD%E6%95%B0/</loc>
+    <loc>http://yoursite.com/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
@@ -562,7 +562,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/top/index.html</loc>
+    <loc>http://yoursite.com/python%E5%9F%BA%E7%A1%80/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     

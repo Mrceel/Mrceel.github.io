@@ -2,21 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/git%E5%91%BD%E4%BB%A4/</loc>
+    <loc>http://yoursite.com/call%E5%87%BD%E6%95%B0%E7%90%86%E8%A7%A3/</loc>
     
-    <lastmod>2019-02-28T02:30:42.999Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/top/index.html</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
+    <lastmod>2019-03-14T03:37:52.684Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/18-10-12/</loc>
+    
+    <lastmod>2019-03-14T02:46:28.053Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/git%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2019-03-14T01:05:36.802Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/top/index.html</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
@@ -289,7 +296,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Set%E5%92%8CMap/</loc>
+    <loc>http://yoursite.com/python%E5%9F%BA%E7%A1%80/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
@@ -562,7 +569,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/python%E5%9F%BA%E7%A1%80/</loc>
+    <loc>http://yoursite.com/Set%E5%92%8CMap/</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     

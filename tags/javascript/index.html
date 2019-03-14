@@ -124,7 +124,7 @@
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="且慢 。">
-<meta property="og:url" content="http://yoursite.com/tags/javascript/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/javaScript/index.html">
 <meta property="og:site_name" content="且慢 。">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
@@ -135,7 +135,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/javascript/">
+  <link rel="canonical" href="http://yoursite.com/tags/javaScript/">
 
 
 
@@ -145,7 +145,7 @@
   };
 </script>
 
-  <title>标签: javascript | 且慢 。</title>
+  <title>标签: javaScript | 且慢 。</title>
   
 
 
@@ -368,7 +368,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>javascript<small>标签</small>
+        <h1>javaScript<small>标签</small>
         </h1>
       </div>
 
@@ -380,43 +380,17 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/js判断是否是PC端/" itemprop="url">
+            <a class="post-title-link" href="/call函数理解/" itemprop="url">
               
-                <span itemprop="name">使用js判断是Pc端或者移动端</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-07-30T17:35:10+08:00" content="2018-07-30">
-          07-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/Set和Map/" itemprop="url">
-              
-                <span itemprop="name">Set 和 Map</span>
+                <span itemprop="name">call 函数的理解</span>
               
             </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-05-11T17:35:10+08:00" content="2018-05-11">
-          05-11
+        <time class="post-time" itemprop="dateCreated" datetime="2018-10-30T00:00:00+08:00" content="2018-10-30">
+          10-30
         </time>
       </div>
 
@@ -475,7 +449,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">77</span>
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -603,7 +577,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">33</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1255,6 +1233,32 @@
      */
     function IsPC() {
         var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone", "iPod"];
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        if(window.screen.width>=768){
+             flag = true;
+        }
+        return flag;
+    }
+
+    // if(!IsPC) {
+    //   $('section .post.post-type-normal').css({
+    //     'width': 'auto';
+	  //     'height': 'auto';
+    //     'display': 'inline-block';
+    //   })
+    // }
+
+</script>
+</body>
+</html>
+navigator.userAgent;
         var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone", "iPod"];
         var flag = true;
         for (var v = 0; v < Agents.length; v++) {

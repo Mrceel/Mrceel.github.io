@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css">
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"bounceIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="本文使用 Python 实现网络爬虫爬取数据…最近，一部叫《北京女子图鉴》的电视剧刷爆了整个朋友圈。这部剧讲的是大学毕业生陈可依只身北上打拼的故事。">
+<meta name="keywords" content="阅读">
+<meta property="og:type" content="article">
+<meta property="og:title" content="400万北漂女孩爆红朋友圈，背后的真相却让人泪奔了...">
+<meta property="og:url" content="http://mrceel.cn/18-10-12.html">
+<meta property="og:site_name" content="且慢 。">
+<meta property="og:description" content="本文使用 Python 实现网络爬虫爬取数据…最近，一部叫《北京女子图鉴》的电视剧刷爆了整个朋友圈。这部剧讲的是大学毕业生陈可依只身北上打拼的故事。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://oss.yoobingo.com/smalltarget/app/image/textEditor/2018-04-28/1524880125998.png">
+<meta property="og:image" content="http://oss.yoobingo.com/smalltarget/app/image/textEditor/2018-04-28/1524880182145.jpeg">
+<meta property="og:image" content="http://oss.yoobingo.com/smalltarget/app/image/textEditor/2018-04-28/1524880126298.png">
+<meta property="og:image" content="http://oss.yoobingo.com/smalltarget/app/image/textEditor/2018-04-28/1524880126338.png">
+<meta property="og:image" content="http://oss.yoobingo.com/smalltarget/app/image/textEditor/2018-04-28/1524880126400.png">
+<meta property="og:image" content="http://oss.yoobingo.com/smalltarget/app/image/textEditor/2018-04-28/1524880126460.png">
+<meta property="og:image" content="http://oss.yoobingo.com/smalltarget/app/image/textEditor/2018-04-28/1524880126512.png">
+<meta property="og:updated_time" content="2019-03-14T02:46:28.053Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="400万北漂女孩爆红朋友圈，背后的真相却让人泪奔了...">
+<meta name="twitter:description" content="本文使用 Python 实现网络爬虫爬取数据…最近，一部叫《北京女子图鉴》的电视剧刷爆了整个朋友圈。这部剧讲的是大学毕业生陈可依只身北上打拼的故事。">
+<meta name="twitter:image" content="http://oss.yoobingo.com/smalltarget/app/image/textEditor/2018-04-28/1524880125998.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://mrceel.cn/18-10-12.html">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>400万北漂女孩爆红朋友圈，背后的真相却让人泪奔了... | 且慢 。</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span style="display: none" class="site-title">且慢 。</span>
+        <span class="site-title"><img src="/images/title-logo/10.png"></span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br> 首页</a>
+  </li><span class="xian"></span>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br> 关于</a>
+  </li><span class="xian"></span>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br> 标签</a>
+  </li><span class="xian"></span>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br> 分类</a>
+  </li><span class="xian"></span>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br> 归档</a>
+  </li><span class="xian"></span>
+        
+        
+        
+          
+          <li class="menu-item menu-item-top">
+    <a href="/top/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-signal"></i> <br> Top</a>
+  </li><span class="xian"></span>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i>  <br>  搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mrceel.cn/18-10-12.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mrceel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="且慢 。">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">400万北漂女孩爆红朋友圈，背后的真相却让人泪奔了...
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-12 12:53:31" itemprop="dateCreated datePublished" datetime="2018-10-12T12:53:31+08:00">2018-10-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-14 10:46:28" itemprop="dateModified" datetime="2019-03-14T10:46:28+08:00">2019-03-14</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/阅读/" itemprop="url" rel="index"><span itemprop="name">阅读</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/18-10-12.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/18-10-12.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/18-10-12.html" class="leancloud_visitors" data-flag-title="400万北漂女孩爆红朋友圈，背后的真相却让人泪奔了...">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文使用 Python 实现网络爬虫爬取数据…<br><span style="font-size: 15px;">最近，一部叫《北京女子图鉴》的电视剧刷爆了整个朋友圈。这部剧讲的是大学毕业生陈可依只身北上打拼的故事。</span><br><a id="more"></a><br><span style="font-size: 15px;">本以为这样一部剧能引起不少在大城市独自奋斗的女孩子的共鸣，没想到很多姑娘看完都炸了：<strong>“导演你是不是对女性有什么误解？”</strong></span></p>
+<p><span style="font-size: 15px;">标榜着“独立自强”的女主，职场每一次升迁，都是傍着男人；嘴上说着“想要什么自己去赚”，收起土豪老总送的香水倒是心安理得。身边的闺蜜唯一信奉的生活哲理就是“一张床可以奋斗出一套房”。就连剧里唯一成功的女老总，房产也是靠离婚的补偿金买的。</span></p>
+<p><span style="font-size: 15px;"><img class="" data-="" data-ratio="0.562037037037037" data-s="300,640" data-type="png" data-w="1080" src="http://oss.yoobingo.com/smalltarget/app/image/textEditor/2018-04-28/1524880125998.png" style="max-width:100%"></span></p>
+<p><span style="font-size: 15px;">打着女权的旗号，却在鼓励女性靠脂粉、靠衣服博取利益，无限地夸大颜值、关系、小聪明的作用，殊不知这一切都狠狠侮辱和讽刺了那些靠自己的智慧、实力和努力来赢得地位的女性。</span></p>
+<p><strong><span style="font-size: 15px;">真正在大城市拼搏的女孩子，从来不是这样的。</span></strong></p>
+<p style="white-space: normal;text-align: center;"><br><strong style="max-width: 100%;font-size: 16px;color: rgb(171, 25, 66);background-color: rgb(255, 255, 255);border-radius: 5px;word-wrap: break-word !important;">／／01／／</strong><br></p><br><span style="font-size: 15px;">曾经见过这样一张照片。凌晨两点的街道上，一个女孩蹲在路中间崩溃大哭。那一刻，一定是有什么东西最后压垮了她，让她活不下去了。</span><br><span style="font-size: 15px;"><strong style="max-width: 100%;font-size: 16px;color: rgb(171, 25, 66);background-color: rgb(255, 255, 255);box-sizing: border-box !important;word-wrap: break-word !important;"><img class="" data-backh="376" data-backw="558" data-cropori="" data-cropx1="0" data-cropx2="600" data-cropy1="0" data-cropy2="405.3763440860215" data-ratio="0.675" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/zKBwDdu8U8EAIKIAiaehicyQacAY7gtpI2xjeAyeFCKblZiblTJyYllbzYNn0yMLYU03tS9ibVJn5YdvfwAzRRdPIw/640?wx_fmt=jpeg" data-type="jpeg" data-w="600" src="http://oss.yoobingo.com/smalltarget/app/image/textEditor/2018-04-28/1524880182145.jpeg" style="max-width:100%"></strong></span><br><br><strong><span style="font-size: 15px;color: rgb(171, 25, 66);">而在大城市，这样的深夜痛哭，还有很多。</span></strong><br><br><span style="font-size: 15px;">认识一个编剧，一毕业就做了北漂。刚来的时候穷得只能住在半地下室里。冬天没有暖气，睡觉的时候把所有棉衣都盖在身上；夏天极潮，雨一大，半截窗户就开始漏水，得用脸盆接着。<br>就这样苦撑两年，等来的不是机会，而是异地男友的微信：<strong>我们分手吧，我等不起了。</strong></span><br><br><span style="font-size: 15px;">苦吗？这就是大部分北漂姑娘的日常。谁没住过几次地下室，谁没住过一间合租房，谁没被黑中介坑过，谁没被房东突然涨过房租？</span><code></code><br><br><span style="font-size: 15px;">可再苦，还是坚持了下来，哪怕每一个微笑的背后，都是咬紧牙关的灵魂。</span><br><br><span style="font-size: 15px;"><img class="" data-="" data-backh="375" data-backw="558" data-copyright="0" data-ratio="0.6708860759493671" data-s="300,640" data-type="png" data-w="948" src="http://oss.yoobingo.com/smalltarget/app/image/textEditor/2018-04-28/1524880126298.png" style="max-width:100%"></span><br><br><p style="white-space: normal;text-align: center;"><br><strong style="max-width: 100%;font-size: 16px;color: rgb(171, 25, 66);background-color: rgb(255, 255, 255);border-radius: 5px;word-wrap: break-word !important;">／／02／／</strong><br></p>
+
+<p><span style="font-size: 15px;">朋友圈里有一个妹子，头像是樊胜美，配上字幕：“在上海生活不容易啊”。</span></p>
+<p><span style="font-size: 15px;">在外企上班的她，每天压力大到一把一把掉头发。从小没被爸妈说过一句重话，工作之后整天被领导骂，被客户折磨。熬夜加班成了</span><span style="font-size: 15px;">常事</span><span style="font-size: 15px;">，有一次竟然在公交车上站着睡着了，还自嘲反正超挤，睡着也不会摔倒。没有时间做饭，整天吃着油腻的外卖，常常胃疼到脸色发白。</span></p>
+<p><span style="font-size: 15px;">最盼望的事，就是升职加薪，努力攒钱在这座城市买一个小房子，成为这个城市里真正的一员。<strong>可不管怎么努力，工资永远追不上房价。</strong></span></p>
+<p><span style="font-size: 15px;"><img class="" data-="" data-backh="413" data-backw="558" data-copyright="0" data-ratio="0.7389473684210527" data-s="300,640" data-type="png" data-w="950" src="http://oss.yoobingo.com/smalltarget/app/image/textEditor/2018-04-28/1524880126338.png" style="max-width:100%"></span></p>
+<p><span style="font-size: 15px;">有一次下班时下雨了，她为了省下打车钱，缩在站台等了半个小时的公交。远远地，她看着一个和她年纪相仿的妹子上了一辆法拉利。</span></p>
+<p><span style="font-size: 15px;">这就是大城市，有人一出生就拥有你从没有过的东西，而有人必须用力奔跑才赶上别人的起跑线。<strong>最难的从来不是买房，而是实现阶层的跨越。</strong></span></p>
+<p style="white-space: normal;text-align: center;"><br><strong style="max-width: 100%;font-size: 16px;color: rgb(171, 25, 66);background-color: rgb(255, 255, 255);border-radius: 5px;word-wrap: break-word !important;">／／03／／</strong><br></p>
+
+<p><span style="font-size: 15px;">闺蜜来深圳有些年头了。她是销售出身，每天接电话无数，却说自己最害怕接的，就是爸妈的电话。因为每次都是催婚。</span></p>
+<p><span style="font-size: 15px;">有一次，被逼到不行的她也去参加了相亲会。在那个小小的相亲角上，她看到每个人都近乎耻辱地举着一块牌子，在上面把自己物化成一套房子、一辆车、一个本地户口…</span></p>
+<p><strong><span style="font-size: 15px;">在大城市，连感情都多了很多衡量。</span></strong></p>
+<p><span style="font-size: 15px;">而她就像很多打拼的外地女孩一样，无房无车，不是本地户口，不具备任何一项可以在婚姻市场上进行博弈的条件。</span><span style="font-size: 15px;">最可怕的是，她连唯一的资本——<strong>年轻</strong>，也马上失去了。</span></p>
+<p><img class="" data-="" data-copyright="0" data-ratio="0.6588983050847458" data-s="300,640" data-type="png" data-w="944" src="http://oss.yoobingo.com/smalltarget/app/image/textEditor/2018-04-28/1524880126400.png" style="max-width:100%"></p>
+<p><span style="font-size: 15px;">所以大城市的女孩子更急迫、更焦虑，不是担心无人可嫁，<strong>而是怕自己成长的速度，敌不过自己变老的速度。</strong></span></p>
+<p></p><p style="white-space: normal;text-align: center;"><br><strong style="max-width: 100%;font-size: 16px;color: rgb(171, 25, 66);background-color: rgb(255, 255, 255);border-radius: 5px;word-wrap: break-word !important;">／／04／／</strong><br></p><br><span style="font-size: 15px;">你看，这才是最真实的</span><span style="font-size: 15px;color: rgb(171, 25, 66);"><strong>“大城市女子图鉴。”</strong></span><span style="font-size: 15px;">生活从不天真，它不会套着粉红色滤镜给你演玛丽苏剧。</span><p></p>
+<p> <span style="font-size: 15px;">那位编剧朋友，苦熬了十年，才有了今天的江湖地位。朋友圈里的上海妹子，吃了几年的外卖才做到公司中层，靠着期权和投资，勉强付了房子的首付。闺蜜自从看清了现实，更是一心扑到工作上，她说：“脱单和脱贫，至少完成一个。”</span><br><strong><span style="font-size: 15px;">在大城市的弱肉强食里，一个女孩子要付出更多，</span><span style="font-size: 15px;">才能换来一点进步。</span></strong></p>
+<p>, <strong><span style="font-size: 15px;"><img class="" data-="" data-backh="365" data-backw="558" data-copyright="0" data-ratio="0.6526315789473685" data-s="300,640" data-type="png" data-w="950" src="http://oss.yoobingo.com/smalltarget/app/image/textEditor/2018-04-28/1524880126460.png" style="max-width:100%"></span></strong></p>
+<p><span style="font-size: 15px;">记得看过这样一段话：“如果这时候有人抱抱我，我是一定会哭一哭的，如果没有的话，那我就再坚持一下。我要先做一个披荆斩棘无所不能的女英雄，直到遇见能托付一生的人，才能再做一个瓶盖都拧不开的小公主。”</span></p>
+<p><span style="font-size: 15px;">在冷漠的大城市里，从来不是你撒撒娇、掉掉泪就能一步登天的。有多少姑娘，关了灯在合租房里失声痛哭；有多少女孩子，故作坚强，其实还是脆弱的孩子…</span></p>
+<p><span style="font-size: 15px;"><strong style="white-space: normal;"><span style="font-size: 15px;"><img class="" data-="" data-backh="355" data-backw="558" data-copyright="0" data-ratio="0.6363636363636364" data-s="300,640" data-type="png" data-w="946" src="http://oss.yoobingo.com/smalltarget/app/image/textEditor/2018-04-28/1524880126512.png" style="max-width:100%"></span></strong></span></p>
+<p><span style="font-size: 15px;">所有人都看到了你蓬勃的野心，不容小觑的实力，很少有人关心你疲惫的一声叹息。</span><span style="font-size: 15px;">亲爱的姑娘，女英雄做久了，别忘了去疼爱自己，也给别人一个机会，来心疼你。</span></p>
+<p><span style="font-size: 15px;">那个因为忙工作，在计划表里躺了很久的海岛之旅，不如就成行吧。就当给自己放一个假，就当给这么努力的自己，一个小小的奖励。</span></p>
+<p><strong><span style="font-size: 15px;">那个一个人活成一支队伍的自己，那个万事不求人的自己，不如慢慢放松，让别人也有机会来照顾你。</span></strong></p>
+<p>原文地址<a href="http://apis.yoobingo.com/v2/periphery/selectInformationInfo?device=0&amp;infoId=485&amp;packageName=com.dmubiao.xgdk&amp;sign=E1CFA74B6EAD6C5657A1678EAB93C545" target="_blank" rel="noopener">点击跳转</a><br>因阅读颇有感触故转载…<br>本文转载自【习惯打卡】App 如有侵权请联系本人删除！</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+		
+		<div>
+			
+			<div>
+
+    <div style="text-align:center;color: #444;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+			
+		</div>
+		
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/阅读/" rel="tag"><i class="fa fa-tag"></i> 阅读</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/18-10-06.html" rel="next" title="Hexo Next5.x 升级6.x">
+                <i class="fa fa-chevron-left"></i> Hexo Next5.x 升级6.x
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/HexoNext.html" rel="prev" title="HexoNext 深度自定义，修改样式及布局">
+                HexoNext 深度自定义，修改样式及布局 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+
+  
+  
+  
+  
+  </div></article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Mrceel">
+            
+              <p class="site-author-name" itemprop="name">Mrceel</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">80</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/mrceel" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:mrceel@sina.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://writebugs.cn/" title="小小世界" target="_blank">小小世界</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mrceel</span>
+
+  
+
+  
+</div>
+
+
+  
+
+  <div class="powered-by"> 
+  <a class="theme-link" target="_blank" href="https://blog.csdn.net/Mrceel">
+  我的CSDN
+  </a> 
+ </div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info"> <a class="theme-link" target="_blank" href="https://www.baidu.com">
+  我是谁，我在哪
+  </a> 
+  </div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: false,
+        appId: 'J9Aug00BhB6jU2OYr6xiHu44-gzGzoHsz',
+        appKey: '51XanGq9SWANAPupFX24sxH8',
+        placeholder: 'Just go go',
+        avatar:'gravatar',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+	<!-- 页面点击小红心 --> 
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+<script type="text/javascript">
+  console.log('                            _ooOoo_');
+  console.log('                           o8888888o');
+  console.log('                           88" . "88');
+  console.log('                           (| -_- |)');
+  console.log('                            O\ = /O');
+  console.log("                        ____/`---'\____");
+  console.log("                      .   ' \\| |// `.");
+  console.log("                       / \\||| : |||// \\");
+  console.log('                     / _||||| -:- |||||- \\');
+  console.log('                       | | \\\ - /// | |');
+  console.log('                     | \_| ""\---/"" | |');
+  console.log('                      \ .-\__ `-` ___/-. /');
+  console.log('                   ___`. ."" /--.--\ `. . __');
+  console.log("                .** '< `.___\_<|>_/___.' >'**.");
+  console.log('               | | : `- \`.;`\ _ /`;.`/ - ` : | |');
+  console.log('                 \ \ `-. \_ __\ /__ _/ .-` / /');
+  console.log("         ======`-.____`-.___\_____/___.-`____.-'======");
+  console.log("                            `=---='");
+  console.log('                 拦截插件累计拦截逗比s攻击"1381438"次！');
+  console.log('         .............................................');
+  console.log('                  佛祖保佑             永无BUG');
+  
+
+  
+  $('.custom-logo-image').addClass('animated bounceInDown');
+  
+  //添加滚动事件
+  var H = $(window).height();
+  var Hs = $(window).height() - 200;
+  var eles = $('section article');
+  $(window).scroll( function() { 
+    $.each(eles, function(idx, item){
+      if(!$(item).hasClass("animated")){
+        if($(item).offset().top - $(window).scrollTop() < H){
+          $(item).addClass('animated slideInUp')
+        }
+      }
+    })
+  } );
+     /**
+     * 判断是bu是pc设备
+     */
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone", "iPod"];
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        if(window.screen.width>=768){
+             flag = true;
+        }
+        return flag;
+    }
+
+    // if(!IsPC) {
+    //   $('section .post.post-type-normal').css({
+    //     'width': 'auto';
+	  //     'height': 'auto';
+    //     'display': 'inline-block';
+    //   })
+    // }
+
+</script>
+</body>
+</html>

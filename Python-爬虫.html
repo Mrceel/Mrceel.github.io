@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css">
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"bounceIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="urllib模块可以非常方便地抓取URL内容，然后返回内容，">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python-urllib模块的使用总结">
+<meta property="og:url" content="http://mrceel.cn/Python-爬虫.html">
+<meta property="og:site_name" content="且慢 。">
+<meta property="og:description" content="urllib模块可以非常方便地抓取URL内容，然后返回内容，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-14T10:12:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python-urllib模块的使用总结">
+<meta name="twitter:description" content="urllib模块可以非常方便地抓取URL内容，然后返回内容，">
+
+
+
+
+
+
+  <link rel="canonical" href="http://mrceel.cn/Python-爬虫.html">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>python-urllib模块的使用总结 | 且慢 。</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span style="display: none" class="site-title">且慢 。</span>
+        <span class="site-title"><img src="/images/title-logo/10.png"></span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br> 首页</a>
+  </li><span class="xian"></span>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br> 关于</a>
+  </li><span class="xian"></span>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br> 标签</a>
+  </li><span class="xian"></span>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br> 分类</a>
+  </li><span class="xian"></span>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br> 归档</a>
+  </li><span class="xian"></span>
+        
+        
+        
+          
+          <li class="menu-item menu-item-top">
+    <a href="/top/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-signal"></i> <br> Top</a>
+  </li><span class="xian"></span>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i>  <br>  搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mrceel.cn/Python-爬虫.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mrceel">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="且慢 。">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python-urllib模块的使用总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-30 17:35:10" itemprop="dateCreated datePublished" datetime="2018-08-30T17:35:10+08:00">2018-08-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-14 18:12:09" itemprop="dateModified" datetime="2018-12-14T18:12:09+08:00">2018-12-14</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Python-爬虫.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/Python-爬虫.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/Python-爬虫.html" class="leancloud_visitors" data-flag-title="python-urllib模块的使用总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>urllib模块可以非常方便地抓取URL内容，然后返回内容，<br><a id="more"></a><br><strong>1. urllib.urlopen(url[,data[,proxies]])</strong><br><code>urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)</code><br>描述：第一个参数可以传递URL之外，我们还可以传递其它的内容，比如 data （附加参数）， timeout （超时时间）等等。<br>data 参数是可选的，如果要添加 data ，它要是字节流编码格式的内容，即 bytes 类型，通过 bytes() 函数可以进行转化，另外如果你传递了这个 data 参数，它的请求方式就不再是 GET 方式请求，而是 POST 。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">urlopen返回对象提供方法：</span><br><span class="line"></span><br><span class="line">        read() , readline() ,readlines() , fileno() , close() ：这些方法的使用方式与文件对象完全一样</span><br><span class="line"></span><br><span class="line">        info()：返回一个httplib.HTTPMessage对象，表示远程服务器返回的头信息</span><br><span class="line"></span><br><span class="line">        getcode()：返回Http状态码。如果是http请求，<span class="number">200</span>请求成功完成;<span class="number">404</span>网址未找到</span><br><span class="line"></span><br><span class="line">        geturl()：返回请求的url</span><br></pre></td></tr></table></figure></p>
+<p><strong>2.urllib.urlretrieve(url[,filename[,reporthook[,data]]])</strong><br>描述：将url定位到的html文件下载到你本地的硬盘中。如果不指定filename，则会存为临时文件。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"></span><br><span class="line">request.urlretrieve(urlPath, <span class="string">'./%s.jpg'</span> % fileName)</span><br><span class="line"></span><br><span class="line">urlPath: 网页地址 / 图片地址</span><br><span class="line"></span><br><span class="line">fileName: 储存地址 例如：<span class="string">'./python/img/xxx.html'</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>3.urllib.urlcleanup()</strong><br>描述：清除由于urllib.urlretrieve()所产生的缓存</p>
+<p><strong>4.urllib.urlencode(query)</strong><br>描述：将URL中的键值对以连接符&amp;划分,这里可以与urlopen结合以实现post方法和get方法<br><strong>POST方法</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line">data = urllib.parse.urlencode(&#123;<span class="string">'wd'</span>:<span class="string">'123456'</span>&#125;).encode(<span class="string">'utf-8'</span>)</span><br><span class="line">print(data) <span class="comment"># b'wd=123456'</span></span><br><span class="line"></span><br><span class="line">html = urllib.request.urlopen(<span class="string">"http://httpbin.org/post"</span>, data=data).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line">print(html)</span><br></pre></td></tr></table></figure></p>
+<p><code>http://httpbin.org/post</code>这个地址可以用来测试 POST 请求，它可以输出请求和响应信息，其中就包含我们传递的 data 参数。</p>
+<p><strong>GET方法</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"> </span><br><span class="line">response = urllib.request.urlopen(<span class="string">"https://www.baidu.com"</span>)</span><br><span class="line"></span><br><span class="line">print(response.read().decode(<span class="string">"utf-8"</span>))</span><br></pre></td></tr></table></figure></p>
+<p><strong>5.urllib.request.Request的使用</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">urllib</span>.<span class="title">request</span>.<span class="title">Request</span><span class="params">(url, data=None, headers=&#123;&#125;, origin_req_host=None, unverifiable=False, method=None)</span></span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><code>url</code> 参数是请求链接，这个是必传参数，其他的都是可选参数。</li>
+<li><p><code>data</code> 参数如果要传必须传 <code>bytes</code> （字节流）类型的，如果是一个字典，可以先用 <code>urllib.parse.urlencode()</code> 编码。</p>
+</li>
+<li><p><code>headers</code> 参数是一个字典，你可以在构造 <code>Request</code> 时通过 <code>headers</code> 参数传递，也可以通过调用 Request 对象的 add_header() 方法来添加请求头。请求头最常用的用法就是通过修改 <code>User-Agent</code> 来伪装浏览器，默认的 <code>User-Agent</code> 是 <code>Python-urllib</code> ，你可以通过修改它来伪装浏览器，比如要伪装火狐浏览器，你可以把它设置为 <code>Mozilla/5.0 (X11; U; Linux i686)Gecko/20071127 Firefox/2.0.0.11</code></p>
+</li>
+<li><code>origin_req_host</code> 指的是请求方的 <code>host</code> 名称或者 <code>IP</code> 地址。</li>
+<li><code>unverifiable</code> 指的是这个请求是否是无法验证的，默认是 <code>False</code> 。意思就是说用户没有足够权限来选择接收这个请求的结果。例如我们请求一个HTML文档中的图片，但是我们没有自动抓取图像的权限，这时 <code>unverifiable</code> 的值就是 <code>True</code> 。</li>
+<li><code>method</code> 是一个字符串，它用来指示请求使用的方法，比如 <code>GET</code> ， <code>POST</code> ， <code>PUT</code> 等等。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"> </span><br><span class="line">request =urllib.request.Request(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line"></span><br><span class="line">response = urllib.request.urlopen(request)</span><br><span class="line"></span><br><span class="line">print(response.read().decode(<span class="string">"utf-8"</span>))</span><br></pre></td></tr></table></figure>
+<p>我们依然是用 urlopen() 方法来发送这个请求，只不过这次 urlopen() 方法的参数不再是一个URL，而是一个 Request ，通过构造这个这个数据结构，一方面我们可以将请求独立成一个对象，另一方面可配置参数更加丰富和灵活。</p>
+<p>实例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,parse</span><br><span class="line"></span><br><span class="line">url = <span class="string">"http://httpbin.org/post"</span></span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="comment">#伪装一个火狐浏览器</span></span><br><span class="line">    <span class="string">"User-Agent"</span>:<span class="string">'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'</span>,</span><br><span class="line">    <span class="string">"host"</span>:<span class="string">'httpbin.org'</span></span><br><span class="line">&#125;</span><br><span class="line">dict = &#123;</span><br><span class="line">    <span class="string">"name"</span>:<span class="string">"Germey"</span></span><br><span class="line">&#125;</span><br><span class="line">data = parse.urlencode(dict).encode(<span class="string">"utf8"</span>)</span><br><span class="line"><span class="comment"># data = bytes(parse.urlencode(dict),encoding="utf8")</span></span><br><span class="line"></span><br><span class="line">req = request.Request(url=url,data=data,headers=headers,method=<span class="string">"POST"</span>)</span><br><span class="line">response = request.urlopen(req)</span><br><span class="line">print(response.read().decode(<span class="string">"utf-8"</span>))</span><br></pre></td></tr></table></figure></p>
+<p>在这里我们通过四个参数构造了一个 Request ， url 即请求链接，在 headers 中指定了 User-Agent 和 Host ，传递的参数 data 用了 urlencode() 和 bytes() 方法来转成字节流，另外指定了请求方式为 POST 。</p>
+<p>结果是：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"args"</span>: &#123;&#125;, </span><br><span class="line">  <span class="string">"data"</span>: <span class="string">""</span>, </span><br><span class="line">  <span class="string">"files"</span>: &#123;&#125;, </span><br><span class="line">  <span class="string">"form"</span>: &#123;</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"Germey"</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">"headers"</span>: &#123;</span><br><span class="line">    <span class="string">"Accept-Encoding"</span>: <span class="string">"identity"</span>, </span><br><span class="line">    <span class="string">"Connection"</span>: <span class="string">"close"</span>, </span><br><span class="line">    <span class="string">"Content-Length"</span>: <span class="string">"11"</span>, </span><br><span class="line">    <span class="string">"Content-Type"</span>: <span class="string">"application/x-www-form-urlencoded"</span>, </span><br><span class="line">    <span class="string">"Host"</span>: <span class="string">"httpbin.org"</span>, </span><br><span class="line">    <span class="string">"User-Agent"</span>: <span class="string">"Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)"</span></span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">"json"</span>: null, </span><br><span class="line">  <span class="string">"origin"</span>: <span class="string">"125.46.249.76"</span>, </span><br><span class="line">  <span class="string">"url"</span>: <span class="string">"http://httpbin.org/post"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[Finished <span class="keyword">in</span> <span class="number">1.3</span>s]</span><br></pre></td></tr></table></figure></p>
+<p><strong>6.高级特性</strong><br>接下来就需要更强大的工具 <code>Handler</code> 登场了。</p>
+<p>简而言之你可以把它理解为各种处理器，有专门处理登录验证的，有处理 <code>Cookies</code> 的，有处理代理设置的，利用它们我们几乎可以做到任何 <code>HTTP</code> 请求中所有的事情。</p>
+<p>首先介绍下 <code>urllib.request.BaseHandler</code> ，它是所有其他 <code>Handler</code> 的父类，它提供了最基本的 <code>Handler</code> 的方法，例<br>如 <code>default_open()</code> 、 <code>protocol_request()</code> 等。<br>接下来就有各种 <code>Handler</code> 类继承这个 <code>BaseHandler</code> ，列举如下：</p>
+<ul>
+<li><code>HTTPDefaultErrorHandler</code> 用于处理<code>HTTP</code>响应错误，错误都会抛出 <code>HTTPError</code> 类型的异常。</li>
+<li><code>HTTPRedirectHandler</code> 用于处理重定向。</li>
+<li><code>HTTPCookieProcessor</code> 用于处理 <code>Cookie</code> 。</li>
+<li><code>ProxyHandler</code> 用于设置代理，默认代理为空。</li>
+<li><code>HTTPPasswordMgr</code> 用于管理密码，它维护了用户名密码的表。</li>
+<li><code>HTTPBasicAuthHandler</code> 用于管理认证，如果一个链接打开时需要认证，那么可以用它来解决认证问题。 </li>
+</ul>
+<p>另外还有其他的 <code>Handler</code> ，可以参考官方文档。<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">https:</span>//docs.python<span class="meta">.org</span>/<span class="number">3</span>/library/urllib.request.html<span class="meta">#urllib.request.BaseHandler</span></span><br></pre></td></tr></table></figure></p>
+<p>它们怎么来使用，不用着急，下面会有实例为你演示。<br>另外一个比较重要的就是 OpenerDirector ，我们可以称之为 Opener ，我们之前用过 urllib.request.urlopen() 这个方法，实际上它就是一个 Opener 。<br>那么为什么要引入 Opener 呢？因为我们需要实现更高级的功能，之前我们使用的 Request 、 urlopen() 相当于类库为你封装好了极其常用的请求方法，利用它们两个我们就可以完成基本的请求，但是现在不一样了，我们需要实现更高级的功能，所以我们需要深入一层，使用更上层的实例来完成我们的操作。所以，在这里我们就用到了比调用 urlopen() 的对象的更普遍的对象，也就是 Opener 。</p>
+<p>Opener 可以使用 open() 方法，返回的类型和 urlopen() 如出一辙。那么它和 Handler 有什么关系？简而言之，就是利用 Handler 来构建 Opener 。<br><em>认证</em><br>我们先用一个实例来感受一下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">auth_handler = urllib.request.HTTPBasicAuthHandler()</span><br><span class="line">auth_handler.add_password(realm=<span class="string">'PDQ Application'</span>,</span><br><span class="line">                          uri=<span class="string">'https://mahler:8092/site-updates.py'</span>,</span><br><span class="line">                          user=<span class="string">'klem'</span>,</span><br><span class="line">                          passwd=<span class="string">'kadidd!ehopper'</span>)</span><br><span class="line">opener = urllib.request.build_opener(auth_handler)</span><br><span class="line">urllib.request.install_opener(opener)</span><br><span class="line">urllib.request.urlopen(<span class="string">'http://www.example.com/login.html'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>此处代码为实例代码，用于说明 <code>Handler</code> 和 <code>Opener</code> 的使用方法。在这里，首先实例化了一个 <code>HTTPBasicAuthHandler</code> 对象，然后利用 <code>add_password()</code> 添加进去用户名和密码，相当于建立了一个处理认证的处理器。<br>接下来利用 <code>urllib.request.build_opener()</code> 方法来利用这个处理器构建一个 <code>Opener</code> ，那么这个 <code>Opener</code> 在发送请求的时候就具备了认证功能了。接下来利用 <code>Opener</code> 的 <code>open()</code> 方法打开链接，就可以完成认证了。</p>
+<p><em>代理</em><br>如果添加代理，可以这样做：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">proxy_handler = urllib.request.ProxyHandler(&#123;</span><br><span class="line"><span class="string">'http'</span>: <span class="string">'http://218.202.111.10:80'</span>,</span><br><span class="line"><span class="string">'https'</span>: <span class="string">'https://180.250.163.34:8888'</span></span><br><span class="line">&#125;)</span><br><span class="line">opener = urllib.request.build_opener(proxy_handler)</span><br><span class="line">response = opener.open(<span class="string">'https://www.baidu.com'</span>)</span><br><span class="line">print(response.read())</span><br></pre></td></tr></table></figure></p>
+<p>此处代码为实例代码，用于说明代理的设置方法，代理可能已经失效。</p>
+<p>在这里使用了 ProxyHandler ， ProxyHandler 的参数是一个字典，key是协议类型，比如 http 还是 https 等，value是代理链接，可以添加多个代理。<br>然后利用 build_opener() 方法利用这个 Handler 构造一个 Opener ，然后发送请求即可。</p>
+<p><strong>7.Cookie设置</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> http.cookiejar, urllib.request</span><br><span class="line">cookie = http.cookiejar.CookieJar()</span><br><span class="line">handler = urllib.request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener = urllib.request.build_opener(handler)</span><br><span class="line">response = opener.open(<span class="string">'http://www.baidu.com'</span>)</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> cookie:</span><br><span class="line">   print(item.name+<span class="string">"="</span>+item.value)</span><br></pre></td></tr></table></figure></p>
+<p>运行结果：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">BAIDUID=FA5D3EA91FC106883E2C63D56E7C667B:FG=<span class="number">1</span></span><br><span class="line">BIDUPSID=FA5D3EA91FC106883E2C63D56E7C667B</span><br><span class="line">H_PS_PSSID=</span><br><span class="line">PSTM=<span class="number">1535618742</span></span><br><span class="line">BDSVRTM=<span class="number">0</span></span><br><span class="line">BD_HOME=<span class="number">0</span></span><br><span class="line">delPer=<span class="number">0</span></span><br><span class="line">[Finished <span class="keyword">in</span> <span class="number">0.8</span>s]</span><br></pre></td></tr></table></figure></p>
+<p>文章整理自<code>https://blog.csdn.net/bo_mask/article/details/76067790</code></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+		
+		<div>
+			
+			<div>
+
+    <div style="text-align:center;color: #444;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+			
+		</div>
+		
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/python-openpyxl.html" rel="next" title="openprxl">
+                <i class="fa fa-chevron-left"></i> openprxl
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Python-mysqlclient.html" rel="prev" title="MySQLClient 安装以及使用">
+                MySQLClient 安装以及使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+
+  
+  
+  
+  
+  </div></article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Mrceel">
+            
+              <p class="site-author-name" itemprop="name">Mrceel</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">80</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/mrceel" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:mrceel@sina.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://writebugs.cn/" title="小小世界" target="_blank">小小世界</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mrceel</span>
+
+  
+
+  
+</div>
+
+
+  
+
+  <div class="powered-by"> 
+  <a class="theme-link" target="_blank" href="https://blog.csdn.net/Mrceel">
+  我的CSDN
+  </a> 
+ </div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info"> <a class="theme-link" target="_blank" href="https://www.baidu.com">
+  我是谁，我在哪
+  </a> 
+  </div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: false,
+        appId: 'J9Aug00BhB6jU2OYr6xiHu44-gzGzoHsz',
+        appKey: '51XanGq9SWANAPupFX24sxH8',
+        placeholder: 'Just go go',
+        avatar:'gravatar',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+	<!-- 页面点击小红心 --> 
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+<script type="text/javascript">
+  console.log('                            _ooOoo_');
+  console.log('                           o8888888o');
+  console.log('                           88" . "88');
+  console.log('                           (| -_- |)');
+  console.log('                            O\ = /O');
+  console.log("                        ____/`---'\____");
+  console.log("                      .   ' \\| |// `.");
+  console.log("                       / \\||| : |||// \\");
+  console.log('                     / _||||| -:- |||||- \\');
+  console.log('                       | | \\\ - /// | |');
+  console.log('                     | \_| ""\---/"" | |');
+  console.log('                      \ .-\__ `-` ___/-. /');
+  console.log('                   ___`. ."" /--.--\ `. . __');
+  console.log("                .** '< `.___\_<|>_/___.' >'**.");
+  console.log('               | | : `- \`.;`\ _ /`;.`/ - ` : | |');
+  console.log('                 \ \ `-. \_ __\ /__ _/ .-` / /');
+  console.log("         ======`-.____`-.___\_____/___.-`____.-'======");
+  console.log("                            `=---='");
+  console.log('                 拦截插件累计拦截逗比s攻击"1381438"次！');
+  console.log('         .............................................');
+  console.log('                  佛祖保佑             永无BUG');
+  
+
+  
+  $('.custom-logo-image').addClass('animated bounceInDown');
+  
+  //添加滚动事件
+  var H = $(window).height();
+  var Hs = $(window).height() - 200;
+  var eles = $('section article');
+  $(window).scroll( function() { 
+    $.each(eles, function(idx, item){
+      if(!$(item).hasClass("animated")){
+        if($(item).offset().top - $(window).scrollTop() < H){
+          $(item).addClass('animated slideInUp')
+        }
+      }
+    })
+  } );
+     /**
+     * 判断是bu是pc设备
+     */
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone", "iPod"];
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        if(window.screen.width>=768){
+             flag = true;
+        }
+        return flag;
+    }
+
+    // if(!IsPC) {
+    //   $('section .post.post-type-normal').css({
+    //     'width': 'auto';
+	  //     'height': 'auto';
+    //     'display': 'inline-block';
+    //   })
+    // }
+
+</script>
+</body>
+</html>

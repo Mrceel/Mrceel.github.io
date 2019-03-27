@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[小程序]]></title>
-    <url>%2Fsome.html</url>
-    <content type="text"></content>
-      <categories>
-        <category>小程序</category>
-      </categories>
-      <tags>
-        <tag>小程序</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Python-Flask]]></title>
     <url>%2Fpython-flask.html</url>
     <content type="text"><![CDATA[因为要做一个比较实用的小程序，后台代码不多。所以选择Flask，毕竟他是公认的轻量级！！！之前都是用Django, 这也算熟悉一下Flask吧。 开工~ 安装版本 python3.6.5 Flask 1.0 (windows) 为了不污染全局环境，新建一个虚拟环境。新建该步骤不会有成功提示，执行完直接看是否新建了venv文件夹。python -m venv venv 激活环境venv\Scripts\activate 安装Flask设置了下镜像，不然会报错。pip install Flask -i https://pypi.tuna.tsinghua.edu.cn/simple/]]></content>

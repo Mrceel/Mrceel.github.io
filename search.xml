@@ -272,7 +272,7 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>javascript</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -482,7 +482,7 @@
       </categories>
       <tags>
         <tag>Es6</tag>
-        <tag>javascript</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -582,7 +582,7 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>javascript 闭包</tag>
+        <tag>JavaScript 闭包</tag>
       </tags>
   </entry>
   <entry>
@@ -849,7 +849,7 @@
     <url>%2F%E9%BC%A0%E6%A0%87%E6%BB%9A%E8%BD%AE%E4%BA%8B%E4%BB%B6-1.html</url>
     <content type="text"><![CDATA[滚轮事件 以下便是滚轮事件的兼容写法 123456789101112131415161718192021222324var scrollFunc = function (e) &#123; e = e || window.event; if (e.wheelDelta) &#123; //判断浏览器IE，谷歌滑轮事件 if (e.wheelDelta &gt; 0) &#123; //当滑轮向上滚动时 alert("滑轮向上滚动"); &#125; if (e.wheelDelta &lt; 0) &#123; //当滑轮向下滚动时 alert("滑轮向下滚动"); &#125; &#125; else if (e.detail) &#123; //Firefox滑轮事件 if (e.detail &gt; 0) &#123; //当滑轮向上滚动时 alert("滑轮向上滚动"); &#125; if (e.detail &lt; 0) &#123; //当滑轮向下滚动时 alert("滑轮向下滚动"); &#125; &#125; &#125; //给页面绑定滑轮滚动事件if (document.addEventListener) &#123;//firefox document.addEventListener('DOMMouseScroll', scrollFunc, false);&#125; //滚动滑轮触发scrollFunc方法 //ie 谷歌window.onmousewheel = document.onmousewheel = scrollFunc;]]></content>
       <categories>
-        <category>javaScript</category>
+        <category>JavaScript</category>
       </categories>
       <tags>
         <tag>JavaScript 事件</tag>

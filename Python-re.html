@@ -691,7 +691,7 @@ table:nth-of-type(3) th:first-of-type {
 <p><strong> 一些注意点 </strong><br>1、<code>re.match</code>与<code>re.search</code>与<code>re.findall</code>的区别：</p>
 <p><code>re.match</code>只匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败，函数返回<code>None</code>；而<code>re.search</code>匹配整个字符串，直到找到一个匹配。</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=re.search(<span class="string">'[\d]'</span>,<span class="string">"abc33"</span>).group()</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(a)</span></span></span><br><span class="line">p=re.match(<span class="string">'[\d]'</span>,<span class="string">"abc33"</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(p)</span></span></span><br><span class="line">b=re.findall(<span class="string">'[\d]'</span>,<span class="string">"abc33"</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(b)</span></span></span><br></pre></td></tr></table></figure>
-<p>执行结果：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br><span class="line"><span class="keyword">None</span></span><br><span class="line">[<span class="string">'3'</span>, <span class="string">'3'</span>]</span><br></pre></td></tr></table></figure></p>
+<p>执行结果：<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br><span class="line"><span class="literal">None</span></span><br><span class="line"><span class="meta">[</span><span class="string">'3'</span>, <span class="string">'3'</span><span class="meta">]</span></span><br></pre></td></tr></table></figure></p>
 <p>2、贪婪匹配与非贪婪匹配</p>
 <p><code>*?,+?,??,{m,n}?</code>   前面的<code>*,+,?</code>等都是贪婪匹配，也就是尽可能匹配，后面加<code>?</code>号使其变成惰性匹配</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = re.findall(<span class="string">r"a(\d+?)"</span>,<span class="string">'a23b'</span>)</span><br><span class="line">print(a)</span><br><span class="line">b = re.findall(<span class="string">r"a(\d+)"</span>,<span class="string">'a23b'</span>)</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
@@ -703,7 +703,7 @@ table:nth-of-type(3) th:first-of-type {
 <hr>
 <p>这里需要注意的是如果前后均有限定条件的时候，就不存在什么贪婪模式了，非匹配模式失效。<br>复制代码<br> 3、用<code>flags</code>时遇到的小坑</p>
 <p><code>print(re.split(&#39;a&#39;,&#39;1A1a2A3&#39;,re.I))</code>#输出结果并未能区分大小写<br>这是因为<code>re.split(pattern，string，maxsplit,flags)</code>默认是四个参数，当我们传入的三个参数的时候，系统会默认re.I是第三个参数，所以就没起作用。如果想让这里的<code>re.I</code>起作用，写成<code>flags=re.I</code>即可。<br><strong> 正则的小实践 </strong><br>1、匹配电话号码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p = re.compile(<span class="string">r'\d&#123;3&#125;-\d&#123;6&#125;'</span>)</span><br><span class="line">print(p.findall(<span class="string">'010-628888'</span>))</span><br></pre></td></tr></table></figure></p>
-<p>2、匹配IP<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r"(([01]?\d?\d|2[0-4]\d|25[0-5])\.)&#123;3&#125;([01]?\d?\d|2[0-4]\d|25[0-5]\.)"</span>,<span class="string">"192.168.1.1"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>2、匹配IP<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r"(([01]?\d?\d|2[0-4]\d|25[0-5])\.)&#123;3&#125;([01]?\d?\d|2[0-4]\d|25[0-5]\.)"</span>,<span class="string">"192.168.1.1"</span>)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -876,9 +876,7 @@ table:nth-of-type(3) th:first-of-type {
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

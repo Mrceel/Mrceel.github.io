@@ -506,23 +506,23 @@
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span><span class="built_in"> default </span>function(num1, num2) &#123;</span><br><span class="line">    return num1 + num2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>此模块将一个函数作为默认值进行了导出， default 关键字标明了这是一个默认导出。此函数并不需要有名称，因为它就代表这个模块自身。对比最前面使用export导出的函数，并不是匿名函数而是必须有一个名称用于加载模块的时候使用，但是默认导出则无需一个名字，因为模块名就代表了这个导出值。</p>
 <p>也可以使用重命名语法来导出默认值。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function sum(num1, num2) &#123;</span><br><span class="line">    return num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="builtin-name">export</span> &#123; sum as<span class="built_in"> default </span>&#125;;</span><br></pre></td></tr></table></figure></p>
-<h1 id="加载模块"><a href="#加载模块" class="headerlink" title="加载模块"></a>加载模块</h1><p>在模块中使用<strong> import </strong>关键字来导入其他模块。<br>import 语句有两个部分，一是需要导入的标识符，二是需导入的标识符的来源模块。此处是导入语句的基本形式：<br><figure class="highlight capnproto"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; identifier1,identifier2 &#125; <span class="keyword">from</span> <span class="string">"./example.js"</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="加载模块"><a href="#加载模块" class="headerlink" title="加载模块"></a>加载模块</h1><p>在模块中使用<strong> import </strong>关键字来导入其他模块。<br>import 语句有两个部分，一是需要导入的标识符，二是需导入的标识符的来源模块。此处是导入语句的基本形式：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; identifier1,identifier2 &#125; <span class="keyword">from</span> <span class="string">"./example.js"</span></span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>大括号中指定了从给定模块导入的标识符</li>
 <li>from指明了需要导入的模块。模块由一个表示模块路径的字符串来指定。</li>
 </ul>
 <p>当从模块导入了一个绑定时，你不能在当前文件中再定义另一个同名变量（包括导入另一个同名绑定），也不能在对应的 import 语句之前使用此标识符，更不能修改它的值。</p>
 <h1 id="导入单个绑定"><a href="#导入单个绑定" class="headerlink" title="导入单个绑定"></a>导入单个绑定</h1><p>如果一个模块只导出了一个函数（或变量或类），或者导出了多个接口但是只选择导入其中的一个，那么就可以写成下面单个导入的模式：</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;sum&#125; <span class="keyword">from</span> <span class="string">'./example.js'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;sum&#125; <span class="keyword">from</span> <span class="string">'./example.js'</span></span><br></pre></td></tr></table></figure>
 <h1 id="完全导入一个模块"><a href="#完全导入一个模块" class="headerlink" title="完全导入一个模块"></a>完全导入一个模块</h1><p>还有一种情况，就是将整个模块当做单一对象导入，该模块的所有导出都会作为对象的属性存在：</p>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import * as <span class="built_in">example</span> from './<span class="built_in">example</span>.js'</span><br><span class="line"><span class="built_in">example</span>.<span class="built_in">sum</span>(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line"><span class="built_in">example</span>.multiply(<span class="number">2</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
 <p>在此代码中， example.js 中所有导出的绑定都被加载到一个名为 example 的对象中，具名导出（ sum() 函数、 multiple() 函数）都成为 example 的可用属性。<br>这种导入格式被称为<strong> 命名空间导入 </strong>，这是因为该 example 对象并不存在于 example.js 文件中，而是作为一个命名空间对象被创建使用，其中包含了 example.js 的所有导出成员。<br><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">然而要记住，无论你对同一个模块使用了多少次 <span class="keyword">import</span> 语句，该模块都只会被执行一次。</span><br></pre></td></tr></table></figure></p>
 <p>在导出模块的代码执行之后，已被实例化的模块就被保留在内存中，并随时都能被其他 import 所引用.</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; sum &#125; <span class="keyword">from</span> <span class="string">"./example.js"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">multiply</span> &#125; <span class="keyword">from</span> <span class="string">"./example.js"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; magicNumber &#125; <span class="keyword">from</span> <span class="string">"./example.js"</span>;</span><br></pre></td></tr></table></figure>
 <p>尽管此处的模块使用了三个 import 语句，但 example.js 只会被执行一次。若同一个应用中的其他模块打算从 example.js 导入绑定，则那些模块都会使用这段代码中所用的同一个模块实例。</p>
-<h1 id="重命名导入"><a href="#重命名导入" class="headerlink" title="重命名导入"></a>重命名导入</h1><p>与导出相同，我们同样可以重命名导入的绑定：<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; sum <span class="keyword">as</span> add&#125; <span class="keyword">from</span> <span class="string">'./example.js'</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="重命名导入"><a href="#重命名导入" class="headerlink" title="重命名导入"></a>重命名导入</h1><p>与导出相同，我们同样可以重命名导入的绑定：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; sum <span class="keyword">as</span> add&#125; <span class="keyword">from</span> <span class="string">'./example.js'</span></span><br></pre></td></tr></table></figure></p>
 <h1 id="导入默认值"><a href="#导入默认值" class="headerlink" title="导入默认值"></a>导入默认值</h1><p>如果一个模块导出了默认值，那么可以这样导入默认值：</p>
-<figure class="highlight capnproto"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sum <span class="keyword">from</span> <span class="string">"./example.js"</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sum <span class="keyword">from</span> <span class="string">"./example.js"</span>;</span><br></pre></td></tr></table></figure>
 <p>这个导入语句从 example.js 模块导入了其默认值。注意此处并未使用花括号，与之前在非默认的导入中看到的不同。本地名称 sum 被用于代表目标模块所默认导出的函数，因此无需使用花括号。</p>
 <p>如果一个模块既导出了默认值、又导出了一个或更多非默认的绑定的模块：<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> let color = <span class="string">"red"</span>;</span><br><span class="line"></span><br><span class="line"><span class="builtin-name">export</span><span class="built_in"> default </span>function(num1, num2) &#123;</span><br><span class="line">    return num1 + num2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>可以像下面这样使用一条import语句来导入它的所有导出绑定：<br><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sum,&#123;<span class="built_in">color</span>&#125; from <span class="string">"./example.js"</span></span><br></pre></td></tr></table></figure></p>
@@ -1437,7 +1437,7 @@
   
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   console.log('                            _ooOoo_');
   console.log('                           o8888888o');
   console.log('                           88" . "88');
@@ -1504,7 +1504,7 @@
     //   })
     // }
 
-</script>
+</script> -->
 </body>
 </html>
   <!-- 页面点击小红心 --> 

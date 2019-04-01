@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://mrceel.cn/Ajax.html</loc>
+    
+    <lastmod>2019-04-01T08:34:14.264Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://mrceel.cn/python-flask.html</loc>
     
     <lastmod>2019-03-27T00:47:19.250Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://mrceel.cn/git%E5%91%BD%E4%BB%A4.html</loc>
     
     <lastmod>2019-03-14T01:05:36.802Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://mrceel.cn/HexoNext.html</loc>
-    
-    <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     
   </url>
   
@@ -520,7 +520,7 @@
   </url>
   
   <url>
-    <loc>http://mrceel.cn/Ajax.html</loc>
+    <loc>http://mrceel.cn/HexoNext.html</loc>
     
     <lastmod>2018-12-14T10:12:09.000Z</lastmod>
     

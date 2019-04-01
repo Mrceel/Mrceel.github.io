@@ -21,8 +21,9 @@
                         <p>联系方式：</p>
                         <div>
                             <ul>
-                                <li><span><i class="fa fa-qq"></i></span>&nbsp;&nbsp;&nbsp;{{ theme.touxiang.qq }}</li>
-                                <li><span><i class="fa fa-phone"></i></span>&nbsp;&nbsp;&nbsp;{{ theme.touxiang.tel }}</li>
+                                {% for item in theme.touxiang.connect %}
+                                    <li><span><i class="fa {{ item.icon }}"></i></span>&nbsp;&nbsp;{{ item.acc }}</li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>

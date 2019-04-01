@@ -1,7 +1,7 @@
 ---
 title: 使用js判断是Pc端或者移动端
 date: 2018-07-30 17:35:10
-tags: [javascript]
+tags: [JavaScript]
 categories: JavaScript
 ---
 使用js判断是Pc端或者移动端

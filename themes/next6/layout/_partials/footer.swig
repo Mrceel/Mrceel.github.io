@@ -37,11 +37,11 @@
 {% if theme.seo %}
   {% set nofollow = ' rel="external nofollow"' %}
 {% endif %}
-{# 此处注释__('footer.powered', '<a class="theme-link" target="_blank"' + nofollow + ' href="https://hexo.io">Hexo</a>')  #}  
+{# 此处注释__('footer.powered', '<a class="theme-link" target="_blank"' + nofollow + ' href="https://hexo.io" rel="external nofollow">Hexo</a>')  #}  
 {% if theme.footer.powered.enable %}
   <div class="powered-by">{#
   #} 
-  {% if theme.footer.powered.isLink %}<a class="theme-link" target="_blank" href="{{ theme.footer.powered.link }}" >{% endif %}
+  {% if theme.footer.powered.isLink %}<a class="theme-link" target="_blank" href="{{ theme.footer.powered.link }}" rel="external nofollow" >{% endif %}
   {{ theme.footer.powered.text }}
   {% if theme.footer.powered.isLink %}</a>{% endif %} 
  {% if theme.footer.powered.version %} v{{ hexo_env('version') }}{% endif %}{#
@@ -55,7 +55,7 @@
 {% if theme.footer.theme.enable %}
   <div class="theme-info">{#
   #} {#
-  #}{% if theme.footer.theme.isLink %}<a class="theme-link" target="_blank" href="{{ theme.footer.theme.link }}" >{% endif %}
+  #}{% if theme.footer.theme.isLink %}<a class="theme-link" target="_blank" href="{{ theme.footer.theme.link }}" rel="external nofollow" >{% endif %}
   {{ theme.footer.theme.text }}
   {% if theme.footer.theme.isLink %}</a>{% endif %} 
   {% if theme.footer.theme.version %} v{{ version }}{% endif %}{#

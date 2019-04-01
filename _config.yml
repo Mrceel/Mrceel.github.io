@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 且慢 。     #网站标题
-subtitle:   #网站副标题
+title: Mrceel     #网站标题
+subtitle: Mrceel  #网站副标题
 #description 主要作用 seo
-description:    #网站描述
+description: Mrceel   #网站描述
 author: Mrceel  #您的名字
 # language: zh-Hans  #网站使用的语言 5.x
 language: zh-CN  #网站使用的语言 6.x
@@ -18,9 +18,9 @@ avatar: /images/a.jpg
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com  #网址
+url: http://mrceel.cn  #网址
 root: /                   #网站根目录
-permalink: :title/        #文章的永久链接格式      :year/:month/:day/:title/
+permalink: :title.html        #文章的永久链接格式      :year/:month/:day/:title/
 permalink_defaults:       #永久链接中各部分的默认值
 
 # Directory 目录
@@ -93,12 +93,18 @@ sitemap:
 baidusitemap:
   path: baidusitemap.xml
 
+baidu_url_submit:
+  count: 100 # 提交最新的一个链接
+  host: www.mrceel.cn # 在百度站长平台中注册的域名
+  token: faAkJg38qpw5aeaH # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
+  path: baidu_urls.txt # 文本文档的地址， 新链接会保存在此文本文档里
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo:
-  repository: 
-    github: git@github.com:Mrceel/Mrceel.github.io.git
-    coding: git@git.coding.net:ceel/ceel.coding.me.git
-  branch: master
+  - type: git
+    repository: 
+      github: git@github.com:Mrceel/Mrceel.github.io.git
+      coding: git@git.coding.net:ceel/ceel.coding.me.git
+    branch: master
+  - type: baidu_url_submitter

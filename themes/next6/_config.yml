@@ -18,12 +18,22 @@ song_sheet:
 touxiang: 
   img: /images/avatar.jpg
   name: '曹永强'
-  qq: 1614452521
-  tel: 1560121****
+  connect:
+    qq:
+      icon: 'fa-qq'
+      acc: 1016771148
+    tel: 
+      icon: 'fa-phone'
+      acc: 156****6567
+    E-Mail:
+      icon: 'fa-envelope'
+      acc: mrceel@sina.com
   love: 
     name1: 游泳
     name2: 音乐
-    name3: 运动
+    name3: 滑雪
+    name4: 看书
+    name5: 乒乓球
 
 
 
@@ -723,7 +733,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page

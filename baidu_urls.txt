@@ -40,8 +40,8 @@ http://mrceel.cn/18-6-01.html
 http://mrceel.cn/triangles.html
 http://mrceel.cn/汉诺塔详解-python.html
 http://mrceel.cn/python 函数.html
-http://mrceel.cn/python基础.html
 http://mrceel.cn/Set和Map.html
+http://mrceel.cn/python基础.html
 http://mrceel.cn/java-string.html
 http://mrceel.cn/javaInterface.html
 http://mrceel.cn/java基础.html

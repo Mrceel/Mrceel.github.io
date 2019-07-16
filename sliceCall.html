@@ -122,23 +122,25 @@
 
 
 
-  <meta name="description" content="Mrceel">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mrceel">
-<meta property="og:url" content="http://mrceel.cn/archives/2018/03/index.html">
+  <meta name="description" content="[].shift.call( arguments ) 和 [].slice.call( arguments ) 祥解经典的 [].slice.call( arguments ) 关于这个的解释网上有很多，大多是 “把类数组对象转为数组对象”。确实这是我们想要实现的功能！ 但这仅仅是说明了结果并没有解答其原理。来点基础知识：123[].slice.call( arguments )// 等效于Arr">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="slice.call( arguments )祥解">
+<meta property="og:url" content="http://mrceel.cn/sliceCall.html">
 <meta property="og:site_name" content="Mrceel">
-<meta property="og:description" content="Mrceel">
+<meta property="og:description" content="[].shift.call( arguments ) 和 [].slice.call( arguments ) 祥解经典的 [].slice.call( arguments ) 关于这个的解释网上有很多，大多是 “把类数组对象转为数组对象”。确实这是我们想要实现的功能！ 但这仅仅是说明了结果并没有解答其原理。来点基础知识：123[].slice.call( arguments )// 等效于Arr">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-16T11:13:02.822Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mrceel">
-<meta name="twitter:description" content="Mrceel">
+<meta name="twitter:title" content="slice.call( arguments )祥解">
+<meta name="twitter:description" content="[].shift.call( arguments ) 和 [].slice.call( arguments ) 祥解经典的 [].slice.call( arguments ) 关于这个的解释网上有很多，大多是 “把类数组对象转为数组对象”。确实这是我们想要实现的功能！ 但这仅仅是说明了结果并没有解答其原理。来点基础知识：123[].slice.call( arguments )// 等效于Arr">
 
 
 
 
 
 
-  <link rel="canonical" href="http://mrceel.cn/archives/2018/03/">
+  <link rel="canonical" href="http://mrceel.cn/sliceCall.html">
 
 
 
@@ -148,7 +150,7 @@
   };
 </script>
 
-  <title>归档 | Mrceel</title>
+  <title>slice.call( arguments )祥解 | Mrceel</title>
   
 
 
@@ -195,7 +197,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -269,7 +271,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br> 归档</a>
   </li><span class="xian"></span>
@@ -297,31 +299,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -368,77 +345,232 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-         
-          
-        不错! 目前共计 80 篇日志。 继续努力。
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mrceel.cn/sliceCall.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mrceel">
+      <meta itemprop="description" content="Mrceel">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mrceel">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/webpace-4.html" itemprop="url">
-              
-                <span itemprop="name">Webpack 使用/配置</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">slice.call( arguments )祥解
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-03-25T17:52:03+08:00" content="2018-03-25">
-          03-25
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
 
+              
+                
+              
+
+              <time title="创建时间：2019-07-16 17:35:10 / 修改时间：19:13:02" itemprop="dateCreated datePublished" datetime="2019-07-16T17:35:10+08:00">2019-07-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/sliceCall.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/sliceCall.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/sliceCall.html" class="leancloud_visitors" data-flag-title="slice.call( arguments )祥解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <p>[].shift.call( arguments ) 和 [].slice.call( arguments ) 祥解<br>经典的 <code>[].slice.call( arguments )</code> 关于这个的解释网上有很多，大多是 <em>“把类数组对象转为数组对象”</em>。确实这是我们想要实现的功能！ 但这仅仅是说明了结果并没有解答其原理。<br>来点基础知识：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[].slice.call( <span class="built_in">arguments</span> )</span><br><span class="line"><span class="comment">// 等效于</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.slice.call( <span class="built_in">arguments</span> )</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p><strong>个人理解：</strong><br>要把<code>arguments</code> 转为数组对象！<br>本着 <strong>能少写就少写，能不写就不写的想法</strong>，想到<code>slice():可从已有的数组中返回选定的元素。</code><br><code>slice</code> 不会改变原来的数组，而是返回一个子数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> kindle = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line"><span class="built_in">console</span>.log(kindle.slice())  <span class="comment">// [ 1, 2, 3, 4, 5, 6, 7 ]</span></span><br></pre></td></tr></table></figure></p>
+<p>那么下一个问题又来了，<code>arguments</code> 不是数组对象，不能调用数组的方法。<br><code>arguments</code>想要转为数组对象，怎么转？ <code>for</code>循环等。。。</p>
+<p> 但是<strong>能少写就少写，能不写就不写</strong><br> 这时候又要解锁一个<code>call</code>函数，或者 <code>apply</code> 函数。这两个函数都可以改变函数 <code>this</code> 的指向，函数运行时的作用域。区别就是参数不一样，<strong>第一个参数都是一个对象或者 ‘this’ 注意this加引号了，  apply第二个参数接收一个数组，call则不是，call可以有n个参数有多少放多少就行</strong></p>
+<p><strong>call函数详解</strong><a href="https://mrceel.cn/call%E5%87%BD%E6%95%B0%E7%90%86%E8%A7%A3.html">点击这里</a></p>
+<p><code>slice</code> 方法原理就是根据传入的参数（值）对原数组（或者类数组）进行遍历获取，赋给新数组然后返回。如果没有参数便复制整个原数组（或者类数组），后赋给新数组然后返回。</p>
+<p><strong>重点来了</strong><br><strong>因为<code>slice</code>内部实现是使用的<code>this</code>代表调用对象。那么当<code>[].slice.call()</code> 传入 <code>arguments</code>对象的时候，通过 <code>call</code>函数改变原来 <code>slice</code>方法的<code>this</code>指向, 使其指向<code>arguments</code>，并对<code>arguments</code>进行复制操作，而后返回一个新数组。至此便是完成了<code>arguments</code>类数组转为数组的目的！</strong></p>
+<p>其实这可以理解为，<strong>让类数组调用数组的方法！</strong></p>
+<h3 id="shift-call-arguments"><a href="#shift-call-arguments" class="headerlink" title="[].shift.call( arguments )"></a><code>[].shift.call( arguments )</code></h3><p><code>[].shift.call( arguments )</code> 这便是一个例子。<br><code>shift()</code> 方法删除数组第一项，并返回删除项。<br>根据上边的理解，这句代码意思就是： “删除并拿到<code>arguments</code>的第一项”</p>
+
+      
     </div>
+
+    
+
+    
+    
+    
+		
+		<div>
+			
+			<div>
+
+    <div style="text-align:center;color: #444;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+			
+		</div>
+		
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/python-flask.html" rel="next" title="Python-Flask">
+                <i class="fa fa-chevron-left"></i> Python-Flask
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
-  
-  
 
   
+  
+  
+  
+  </div></article>
 
+
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -459,8 +591,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -660,6 +801,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#shift-call-arguments"><span class="nav-number">1.</span> <span class="nav-text">[].shift.call( arguments )</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -814,6 +971,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
 
   
 

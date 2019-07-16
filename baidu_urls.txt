@@ -1,3 +1,4 @@
+http://mrceel.cn/sliceCall.html
 http://mrceel.cn/python-flask.html
 http://mrceel.cn/call函数理解.html
 http://mrceel.cn/git命令.html

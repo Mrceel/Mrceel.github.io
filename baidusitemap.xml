@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://mrceel.cn/swig.html</loc>
+    <lastmod>2019-07-31</lastmod>
+  </url>  <url>
     <loc>http://mrceel.cn/sliceCall.html</loc>
     <lastmod>2019-07-16</lastmod>
   </url>  <url>
@@ -35,9 +38,6 @@
     <lastmod>2019-03-14</lastmod>
   </url>  <url>
     <loc>http://mrceel.cn/node-mysql%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2.html</loc>
-    <lastmod>2018-12-14</lastmod>
-  </url>  <url>
-    <loc>http://mrceel.cn/Django-%E8%B7%A8%E5%9F%9F.html</loc>
     <lastmod>2018-12-14</lastmod>
   </url>  <url>
     <loc>http://mrceel.cn/ES6-Modules.html</loc>
@@ -160,7 +160,7 @@
     <loc>http://mrceel.cn/statistics-word-number.html</loc>
     <lastmod>2018-12-14</lastmod>
   </url>  <url>
-    <loc>http://mrceel.cn/swig.html</loc>
+    <loc>http://mrceel.cn/Anaconda.html</loc>
     <lastmod>2018-12-14</lastmod>
   </url>  <url>
     <loc>http://mrceel.cn/triangles.html</loc>
@@ -196,7 +196,7 @@
     <loc>http://mrceel.cn/%E6%B1%89%E8%AF%BA%E5%A1%94%E8%AF%A6%E8%A7%A3-python.html</loc>
     <lastmod>2018-12-14</lastmod>
   </url>  <url>
-    <loc>http://mrceel.cn/Anaconda.html</loc>
+    <loc>http://mrceel.cn/BeautifulSoup.html</loc>
     <lastmod>2018-12-14</lastmod>
   </url>  <url>
     <loc>http://mrceel.cn/10-09-24.html</loc>
@@ -205,13 +205,13 @@
     <loc>http://mrceel.cn/10-09-27.html</loc>
     <lastmod>2018-12-14</lastmod>
   </url>  <url>
-    <loc>http://mrceel.cn/BeautifulSoup.html</loc>
+    <loc>http://mrceel.cn/CommonJS%E8%A7%84%E8%8C%83.html</loc>
     <lastmod>2018-12-14</lastmod>
   </url>  <url>
     <loc>http://mrceel.cn/18-09-20.html</loc>
     <lastmod>2018-12-14</lastmod>
   </url>  <url>
-    <loc>http://mrceel.cn/CommonJS%E8%A7%84%E8%8C%83.html</loc>
+    <loc>http://mrceel.cn/Django-%E4%BD%BF%E7%94%A8.html</loc>
     <lastmod>2018-12-14</lastmod>
   </url>  <url>
     <loc>http://mrceel.cn/Array%E6%96%B9%E6%B3%95.html</loc>
@@ -235,10 +235,10 @@
     <loc>http://mrceel.cn/python%20%E5%87%BD%E6%95%B0.html</loc>
     <lastmod>2018-12-14</lastmod>
   </url>  <url>
-    <loc>http://mrceel.cn/Django-%E4%BD%BF%E7%94%A8.html</loc>
+    <loc>http://mrceel.cn/Django-%E6%8E%A5%E5%8F%A3.html</loc>
     <lastmod>2018-12-14</lastmod>
   </url>  <url>
-    <loc>http://mrceel.cn/Django-%E6%8E%A5%E5%8F%A3.html</loc>
+    <loc>http://mrceel.cn/Django-%E8%B7%A8%E5%9F%9F.html</loc>
     <lastmod>2018-12-14</lastmod>
   </url>
 </urlset>

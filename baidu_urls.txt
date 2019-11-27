@@ -1,4 +1,9 @@
+http://mrceel.cn/react-native错误记录.html
+http://mrceel.cn/react-native图标的使用.html
+http://mrceel.cn/创建底部导航.html
+http://mrceel.cn/react-native路由的使用.html
 http://mrceel.cn/sliceCall.html
+http://mrceel.cn/nginx.html
 http://mrceel.cn/python-flask.html
 http://mrceel.cn/call函数理解.html
 http://mrceel.cn/git命令.html

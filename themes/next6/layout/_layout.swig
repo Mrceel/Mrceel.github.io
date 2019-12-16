@@ -21,6 +21,7 @@
   <title>{% block title %}{% endblock %}</title>
   {% include '_third-party/analytics/index.swig' %}
   {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
+<link href="https://cdn.bootcss.com/aplayer/1.10.0/APlayer.min.css" rel="stylesheet">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
@@ -117,8 +118,8 @@
   {% include '_third-party/exturl.swig' %}
   {% include '_third-party/bookmark.swig' %}
   {% include '_third-party/copy-code.swig' %}
-
 <script type="text/javascript">
+
   console.log('                            _ooOoo_');
   console.log('                           o8888888o');
   console.log('                           88" . "88');
@@ -184,9 +185,9 @@
     //     'display': 'inline-block';
     //   })
     // }
-
 </script>
 </body>
 </html>
   <!-- 页面点击小红心 --> 
 <script type="text/javascript" src="/js/src/love.js"></script>
+
